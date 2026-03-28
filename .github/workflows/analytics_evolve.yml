@@ -20,7 +20,13 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install -q requests google-api-python-client google-auth numpy
+        run: pip install -q requests google-api-python-client google-auth google-generativeai numpy
+
+      - name: Create directories
+        run: |
+          mkdir -p data memory/short_term memory/mid_term memory/long_term memory/evergreen
+          mkdir -p reflection/postmortems reflection/learnings
+          mkdir -p analytics/raw_exports analytics/normalized analytics/retention
 
       - name: Run Analytics + Evolution
         env:
@@ -28,15 +34,13 @@ jobs:
           YOUTUBE_API_KEY:  ${{ secrets.YOUTUBE_API_KEY }}
           GROQ_API_KEY:     ${{ secrets.GROQ_API_KEY }}
           YT_OAUTH_TOKEN_0: ${{ secrets.YT_OAUTH_TOKEN_0 }}
-          YT_OAUTH_TOKEN_1: ${{ secrets.YT_OAUTH_TOKEN_1 }}
-          YT_OAUTH_TOKEN_2: ${{ secrets.YT_OAUTH_TOKEN_2 }}
         run: python src/orchestrator.py --phase=evolve
 
       - name: Commit evolved genome
         run: |
           git config user.name  "Lyra-Bot"
           git config user.email "lyra@noreply.github.com"
-          git add data/genome.db data/learning.json data/allele_pool.json \
-                  reflection/ memory/ || true
-          git commit -m "evolve: gen-$(cat data/.gen_counter) analytics+selection" || true
-          git push
+          git add -A || true
+          git diff --cached --quiet || git commit -m "evolve: gen-$(cat data/.gen_counter) analytics+selection"
+          git pull --rebase origin main || true
+          git push || true
