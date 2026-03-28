@@ -46,5 +46,11 @@
     "phase": "video_assembly",
     "channel_slot": 2,
     "error": "Video assembly returned None"
+  },
+  {
+    "ts": "2026-03-28T18:53:46.623048+00:00",
+    "phase": "script_gen",
+    "channel_slot": 2,
+    "error": "Script generation returned None"
   }
 ]

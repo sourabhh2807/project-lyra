@@ -1,0 +1,51 @@
+{
+  "shorts_title": "Melania's Dark Past",
+  "full_narration": "You think you know Melania Trump, but a shocking new revelation raises disturbing questions about her past. A dark history that's about to surface at the worst possible time for Donald Trump. As the former First Lady's scandals unfold, we're left wondering: what secrets is Melania hiding? From her modeling days to her high-society connections, every move she makes seems calculated. But is it all just an act, or is there something more sinister at play? As we dig deeper, the truth about Melania's dark past is more shocking than you ever imagined.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "You think you know Melania Trump, but",
+      "visual_description": "Melania Trump's smiling face on screen with a red 'X' symbol overlaid",
+      "text_overlay": "You don't know Melania Trump!",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 10,
+      "narration": "A shocking new revelation raises disturbing questions about her past.",
+      "visual_description": "Dark, ominous music plays as a shadowy figure appears on screen",
+      "text_overlay": "Dark History Vault",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 15,
+      "narration": "From her modeling days to her high-society connections, every move she makes seems calculated.",
+      "visual_description": "Cut to a montage of Melania's modeling photos and socialite events",
+      "text_overlay": "A calculated move?",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "But is it all just an act, or is there something more sinister at play?",
+      "visual_description": "A close-up shot of Melania's face with a hint of a smile",
+      "text_overlay": "Or something more sinister?",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 5,
+      "duration_estimate_sec": 8,
+      "narration": "As we dig deeper, the truth about Melania's dark past is more shocking than you ever imagined.",
+      "visual_description": "A bold, red cliffhanger screen with the words 'To Be Continued...'",
+      "text_overlay": "To Be Continued...",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}

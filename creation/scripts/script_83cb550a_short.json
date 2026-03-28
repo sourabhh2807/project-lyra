@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Crazy Psychology Facts Exposed",
+  "full_narration": "Did you know that 80% of people lie in a single day? It's not just a trivial white lie. Research suggests that deception can become so habitual that our brains start to crave the feeling of dishonesty. In one study, participants who engaged in deception showed increased activity in the brain's reward centers, releasing feel-good chemicals like dopamine. This can lead to a vicious cycle of dishonesty, making it harder to tell the truth. But why do we lie so much? Is it fear, insecurity, or something deeper?",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 8,
+      "narration": "1 in 5 people will lie to their partner today",
+      "visual_description": "a split-screen comparison of a honest and dishonest face",
+      "text_overlay": "The Lie Epidemic",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 8,
+      "narration": "Our brains release dopamine when we lie, making it feel good",
+      "visual_description": "a brain scan animation",
+      "text_overlay": "The Dopamine Deception",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 8,
+      "narration": "Deception can become a habit, making it harder to tell the truth",
+      "visual_description": "a person trapped in a cycle of dishonesty",
+      "text_overlay": "Getting Trapped in Lies",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 16,
+      "narration": "So, why do we lie so much? Is it fear, insecurity, or something deeper?",
+      "visual_description": "a person searching for answers in a maze",
+      "text_overlay": "The Lie Epidemic: Uncovering the Truth",
+      "intensity": "low",
+      "pacing": "slow"
+    }
+  ]
+}
