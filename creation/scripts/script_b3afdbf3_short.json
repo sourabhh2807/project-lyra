@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Pistons vs Lakers: NBA's Most Dramatic Rivalry",
+  "full_narration": "You think the Lakers vs Celtics is the biggest NBA rivalry? Think again. I'm about to blow the lid off a decades-old feud that's been hiding in plain sight. The Detroit Pistons, a team that's been quietly dominating the Western Conference, have a secret history with the Lakers that will leave you speechless. From the infamous 'Bad Boys' era to the current-day superteam, I'll take you deep into the trenches of Pistons-Lakers rivalry, revealing the shocking truth behind their intense matchups. You won't believe what I've uncovered.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Opening shot of the Pistons and Lakers logos side by side, with a dramatic music playing in the background",
+      "visual_description": "High-contrast visuals of Pistons and Lakers players from different eras engaging in intense rivalries",
+      "text_overlay": "Pistons vs Lakers: The Secret Rivalry",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 15,
+      "narration": "Cut to footage of the Pistons' 'Bad Boys' era, highlighting their tough defense and rivalry with Michael Jordan",
+      "visual_description": "Raw, unfiltered footage of Pistons and Lakers players engaging in physical altercations",
+      "text_overlay": "The Birth of a Rivalry",
+      "intensity": "high",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 15,
+      "narration": "Cut to footage of modern-day Pistons and Lakers, highlighting their superteams and intense matchups",
+      "visual_description": "High-definition footage of current Pistons and Lakers players engaging in intense battles",
+      "text_overlay": "The Legacy Lives On",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "Closing shot of the Pistons and Lakers logos side by side, with a dramatic music playing in the background",
+      "visual_description": "Closing shot of the Pistons and Lakers players from different eras coming together, symbolizing the rivalry's lasting impact",
+      "text_overlay": "The Secret's Out",
+      "intensity": "high",
+      "pacing": "slow"
+    }
+  ]
+}

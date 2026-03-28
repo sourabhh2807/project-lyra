@@ -1,6 +1,6 @@
 {
-  "topic_id": "9eed43c9-62ae-4a0f-bc3d-57a7509c0506",
-  "topic": "pistons vs lakers",
+  "topic_id": "374532b5-c4f3-44ba-bb1b-a91ffe8b5ccd",
+  "topic": "machine learning basics",
   "niche": "ai_explained",
   "why_now": "Trending signal detected",
   "audience_state": "entertainment-seeking",
@@ -21,7 +21,7 @@
   "evidence_sources": [
     "google_trends"
   ],
-  "source_signal": "pistons vs lakers",
-  "status": "in_creation",
-  "created_at": "2026-03-28T17:36:36.907821+00:00"
+  "source_signal": "machine learning basics",
+  "status": "queued",
+  "created_at": "2026-03-28T18:26:15.585847+00:00"
 }

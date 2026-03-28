@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Deception Island: Where Betrayal Meets Disaster",
+  "full_narration": "Imagine a place where the earth is frozen in time, where a British naval officer's deception led to catastrophe. Deception Island, located off the coast of Antarctica, holds a dark history that will leave you speechless. In 1819, the British ship 'Williams' arrived at the island, unaware that it was a dormant volcano. The crew was lured by the promise of a safe harbor, but it turned out to be a trap. The volcano erupted, killing 151 men on board. The shocking truth is that this disaster was not just a natural event, but a direct result of human deception. The island's dark past serves as a cautionary tale about the dangers of playing with nature. As we continue to explore the world, we must remember the lessons of Deception Island.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Imagine a place where the earth is frozen in time",
+      "visual_description": "Frozen landscape of Deception Island",
+      "text_overlay": "Deception Island",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 10,
+      "narration": "A British naval officer's deception led to catastrophe",
+      "visual_description": "Historical illustration of the 'Williams' ship",
+      "text_overlay": "British Ship 'Williams'",
+      "intensity": "high",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "The volcano erupted, killing 151 men on board",
+      "visual_description": "Volcanic eruption on Deception Island",
+      "text_overlay": "151 Lives Lost",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 15,
+      "narration": "The island's dark past serves as a cautionary tale",
+      "visual_description": "Dark and ominous landscape of Deception Island",
+      "text_overlay": "Deception Island: A Cautionary Tale",
+      "intensity": "high",
+      "pacing": "slow"
+    }
+  ]
+}

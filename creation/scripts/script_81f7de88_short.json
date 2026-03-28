@@ -1,0 +1,42 @@
+{
+  "shorts_title": " Manipulators Use 1 Simple Tactic to Control You",
+  "full_narration": "Hey there, have you ever felt like someone's been pulling the strings from behind the scenes? Well, it's true. Manipulators use a single, sneaky tactic to control us. It's called the 'foot-in-the-door' technique. They start with a small, seemingly insignificant request, but it's actually a test to see how easily you'll comply. If you say yes, they'll come back with an even bigger ask. It's a classic move, and it's more common than you think.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Manipulators use a single tactic to control us.",
+      "visual_description": "A dark figure lurking in the shadows",
+      "text_overlay": "Foot-in-the-door technique",
+      "intensity": "high",
+      "pacing": "slow"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 8,
+      "narration": "They start with a small, seemingly insignificant request.",
+      "visual_description": "A person hesitantly agreeing to something",
+      "text_overlay": "Small request, big impact",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 8,
+      "narration": "If you say yes, they'll come back with an even bigger ask.",
+      "visual_description": "A person being slowly pulled into a trap",
+      "text_overlay": "Gradual escalation",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "It's a classic move, and it's more common than you think.",
+      "visual_description": "A person waking up to realize they've been manipulated",
+      "text_overlay": "Watch out for the foot-in-the-door",
+      "intensity": "high",
+      "pacing": "slow"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "topic_id": "9eed43c9-62ae-4a0f-bc3d-57a7509c0506",
-  "topic": "pistons vs lakers",
-  "niche": "ai_explained",
+  "topic_id": "f170dc5e-763b-459c-94e7-6428dfe12e62",
+  "topic": "deception island dark history",
+  "niche": "dark_history",
   "why_now": "Trending signal detected",
   "audience_state": "entertainment-seeking",
   "novelty_score": 0.5,
@@ -21,7 +21,7 @@
   "evidence_sources": [
     "google_trends"
   ],
-  "source_signal": "pistons vs lakers",
-  "status": "in_creation",
-  "created_at": "2026-03-28T17:36:36.907821+00:00"
+  "source_signal": "deception island dark history",
+  "status": "queued",
+  "created_at": "2026-03-28T18:26:00.490981+00:00"
 }
