@@ -2,8 +2,8 @@ name: Lyra Master Cycle
 
 on:
   schedule:
-    - cron: '0 */6 * * *'   # Every 6 hours
-  workflow_dispatch:          # Manual trigger for testing
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   generate_slot_0:
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.LYRA_PAT }}
-          fetch-depth: 1
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -24,7 +24,7 @@ jobs:
         run: |
           pip install -q requests python-dotenv google-generativeai \
             google-auth google-auth-oauthlib google-api-python-client \
-            pytrends edge-tts Pillow librosa soundfile numpy pytrends
+            pytrends edge-tts Pillow librosa soundfile numpy
 
       - name: Install ffmpeg
         run: sudo apt-get install -y ffmpeg
@@ -41,11 +41,11 @@ jobs:
 
       - name: Generate Content - Slot 0
         env:
-          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
-          YOUTUBE_API_KEY:       ${{ secrets.YOUTUBE_API_KEY }}
-          GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
-          HF_API_KEY:            ${{ secrets.HF_API_KEY }}
-          YT_OAUTH_TOKEN_0:      ${{ secrets.YT_OAUTH_TOKEN_0 }}
+          GEMINI_API_KEY:    ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY:   ${{ secrets.YOUTUBE_API_KEY }}
+          GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
+          HF_API_KEY:        ${{ secrets.HF_API_KEY }}
+          YT_OAUTH_TOKEN_0:  ${{ secrets.YT_OAUTH_TOKEN_0 }}
         run: python src/orchestrator.py --phase=generate --channel_slot=0
 
       - name: Commit state
@@ -55,16 +55,18 @@ jobs:
           git add data/ memory/ research/processed/ reflection/ \
                   creation/briefs/ execution/publish_logs/ || true
           git commit -m "cycle: slot0 gen-$(cat data/.gen_counter) [$(date -u +%H:%M)]" || true
+          git pull --rebase origin main || true
           git push
 
   generate_slot_1:
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    needs: generate_slot_0   # Stagger to avoid git conflicts
+    needs: generate_slot_0
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.LYRA_PAT }}
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -82,11 +84,11 @@ jobs:
 
       - name: Generate Content - Slot 1
         env:
-          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
-          YOUTUBE_API_KEY:       ${{ secrets.YOUTUBE_API_KEY }}
-          GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
-          HF_API_KEY:            ${{ secrets.HF_API_KEY }}
-          YT_OAUTH_TOKEN_1:      ${{ secrets.YT_OAUTH_TOKEN_1 }}
+          GEMINI_API_KEY:    ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY:   ${{ secrets.YOUTUBE_API_KEY }}
+          GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
+          HF_API_KEY:        ${{ secrets.HF_API_KEY }}
+          YT_OAUTH_TOKEN_1:  ${{ secrets.YT_OAUTH_TOKEN_1 }}
         run: python src/orchestrator.py --phase=generate --channel_slot=1
 
       - name: Commit state
@@ -107,6 +109,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.LYRA_PAT }}
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -124,11 +127,11 @@ jobs:
 
       - name: Generate Content - Slot 2
         env:
-          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
-          YOUTUBE_API_KEY:       ${{ secrets.YOUTUBE_API_KEY }}
-          GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
-          HF_API_KEY:            ${{ secrets.HF_API_KEY }}
-          YT_OAUTH_TOKEN_2:      ${{ secrets.YT_OAUTH_TOKEN_2 }}
+          GEMINI_API_KEY:    ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY:   ${{ secrets.YOUTUBE_API_KEY }}
+          GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
+          HF_API_KEY:        ${{ secrets.HF_API_KEY }}
+          YT_OAUTH_TOKEN_2:  ${{ secrets.YT_OAUTH_TOKEN_2 }}
         run: python src/orchestrator.py --phase=generate --channel_slot=2
 
       - name: Commit state
