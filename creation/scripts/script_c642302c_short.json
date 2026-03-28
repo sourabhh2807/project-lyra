@@ -1,0 +1,42 @@
+{
+  "shorts_title": "The Smurfs' Sinister Origins",
+  "full_narration": "You think the Smurfs are just cute, blue creatures, but their dark history will shock you. They weren't always the friendly, forest-dwelling Smurfs we know today. In fact, their origins are rooted in a 19th-century Belgian cartoon. The Smurfs were created by Peyo, but they were initially depicted as mean-spirited, thieving creatures. It wasn't until the 1950s that they evolved into the lovable Smurfs we adore today.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 8,
+      "narration": "You think the Smurfs are just cute, blue creatures.",
+      "visual_description": "A dark, eerie forest with twisted trees and glowing eyes.",
+      "text_overlay": "The Smurfs' Sinister Origins",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 10,
+      "narration": "Their origins are rooted in a 19th-century Belgian cartoon.",
+      "visual_description": "A black-and-white illustration of the Smurfs in their original form.",
+      "text_overlay": "The Smurfs: From Thieves to Friends",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 12,
+      "narration": "They weren't always the friendly, forest-dwelling Smurfs we know today.",
+      "visual_description": "A split-screen comparison of the original Smurfs and the modern Smurfs.",
+      "text_overlay": "The Smurfs: Then and Now",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 20,
+      "narration": "Their evolution into lovable Smurfs began in the 1950s.",
+      "visual_description": "A montage of Smurfs comics and cartoons from the 1950s.",
+      "text_overlay": "The Smurfs: From Thieves to Friends",
+      "intensity": "medium",
+      "pacing": "slow"
+    }
+  ]
+}
