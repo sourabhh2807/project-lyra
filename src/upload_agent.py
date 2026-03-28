@@ -1,6 +1,6 @@
 """
 upload_agent.py — Uploads videos to YouTube via Data API v3.
-Uses per-channel OAuth tokens stored as GitHub Secrets.
+Single-account mode: ALL slots use YT_OAUTH_TOKEN_0.
 Handles both long-form and Shorts uploads.
 """
 import os, json, logging, time, random
@@ -21,23 +21,27 @@ class UploadAgent:
                tags, channel_slot, video_type="long"):
         """
         Upload video to YouTube. Returns video_id string or None.
-        Requires YT_OAUTH_TOKEN_{slot} env var containing valid OAuth access token.
+        Single-account mode: always uses YT_OAUTH_TOKEN_0 regardless of slot.
         """
         if not video_path or not os.path.exists(video_path):
             log.error(f"Video file not found: {video_path}")
             return None
 
-        token = os.environ.get(f"YT_OAUTH_TOKEN_{channel_slot}", "")
+        # Single account mode: always use token 0
+        token = os.environ.get("YT_OAUTH_TOKEN_0", "")
         if not token:
-            log.error(f"No OAuth token for slot {channel_slot} "
-                      f"(set YT_OAUTH_TOKEN_{channel_slot} secret)")
+            # Fallback: try slot-specific token
+            token = os.environ.get(f"YT_OAUTH_TOKEN_{channel_slot}", "")
+        if not token:
+            log.error(f"No OAuth token available (checked YT_OAUTH_TOKEN_0 and "
+                      f"YT_OAUTH_TOKEN_{channel_slot})")
             return None
 
-        # Determine category and privacy
-        category_id = "28"   # Science & Technology  (22=People, 24=Entertainment, 27=Education)
+        # Determine category based on niche
+        category_id = "27"   # Education (default)
         privacy     = "public"
 
-        # Shorts: title must contain #Shorts
+        # Shorts: title must contain #Shorts for YouTube to recognize it
         if video_type == "short" and "#Shorts" not in title:
             title = title[:90] + " #Shorts"
 
@@ -64,9 +68,9 @@ class UploadAgent:
         }
 
         # 1. Initiate resumable upload session
-        init_url = (f"{YT_UPLOAD_URL}?uploadType=resumable"
-                    f"&part=snippet,status")
+        init_url = f"{YT_UPLOAD_URL}?uploadType=resumable&part=snippet,status"
         try:
+            log.info(f"  Initiating upload: {title[:50]}...")
             init_r = requests.post(init_url, headers=headers,
                                    json=body, timeout=30)
             if init_r.status_code not in (200, 201):
@@ -132,10 +136,11 @@ class UploadAgent:
                         offset += len(chunk)
                         retries = 0
                         pct = int(offset / file_size * 100)
-                        if pct % 20 == 0:
+                        if pct % 25 == 0:
                             log.info(f"    Upload progress: {pct}%")
                     else:
                         retries += 1
+                        log.warning(f"Upload chunk failed: {r.status_code} (retry {retries})")
                         if retries > 3:
                             log.error(f"Upload failed after 3 retries: {r.status_code}")
                             return None
@@ -195,7 +200,9 @@ class UploadAgent:
             log.warning(f"Seed comment failed: {e}")
 
     def _log_upload(self, slot, video_id, video_type, title):
-        log_path = os.path.join(self.root, "execution/publish_logs",
+        log_dir = os.path.join(self.root, "execution/publish_logs")
+        os.makedirs(log_dir, exist_ok=True)
+        log_path = os.path.join(log_dir,
                                 f"upload_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
                                 f"_slot{slot}_{video_type}.json")
         with open(log_path, "w") as f:
