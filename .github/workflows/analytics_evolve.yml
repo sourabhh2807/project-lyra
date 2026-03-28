@@ -2,7 +2,7 @@ name: Lyra Analytics & Evolution
 
 on:
   schedule:
-    - cron: '0 2 */2 * *'   # Every 48 hours at 2am UTC
+    - cron: '0 2 */2 * *'
   workflow_dispatch:
 
 jobs:
@@ -28,12 +28,20 @@ jobs:
           mkdir -p reflection/postmortems reflection/learnings
           mkdir -p analytics/raw_exports analytics/normalized analytics/retention
 
+      - name: Auto-refresh OAuth token
+        env:
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CLIENT_ID:     ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET:  ${{ secrets.YT_CLIENT_SECRET }}
+          YT_OAUTH_TOKEN_0:  ${{ secrets.YT_OAUTH_TOKEN_0 }}
+        run: python src/token_refresh.py
+
       - name: Run Analytics + Evolution
         env:
           GEMINI_API_KEY:   ${{ secrets.GEMINI_API_KEY }}
           YOUTUBE_API_KEY:  ${{ secrets.YOUTUBE_API_KEY }}
           GROQ_API_KEY:     ${{ secrets.GROQ_API_KEY }}
-          YT_OAUTH_TOKEN_0: ${{ secrets.YT_OAUTH_TOKEN_0 }}
+          YT_OAUTH_TOKEN_0: ${{ env.YT_OAUTH_TOKEN_0 || secrets.YT_OAUTH_TOKEN_0 }}
         run: python src/orchestrator.py --phase=evolve
 
       - name: Commit evolved genome
