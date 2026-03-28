@@ -25,9 +25,11 @@ jobs:
         run: |
           git config user.name  "Lyra-Bot"
           git config user.email "lyra@noreply.github.com"
-          git add data/health_report.json || true
-          git commit -m "health: daily check [$(date -u +%Y-%m-%d)]" || true
-          git push
+          git add data/health_report.json LYRA_REPORT.md || true
+          git commit -m "health: daily report [$(date -u +%Y-%m-%d)]" || true
+          git fetch origin main
+          git merge -X ours origin/main --no-edit || true
+          git push origin main
 
 ---
 name: Lyra Memory Compression
