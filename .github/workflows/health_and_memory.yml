@@ -1,1 +1,72 @@
+name: Lyra Health Check
 
+on:
+  schedule:
+    - cron: '0 8 * * *'   # Daily at 8am UTC
+  workflow_dispatch:
+
+jobs:
+  health_check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LYRA_PAT }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Health Check
+        run: python src/health_check.py
+
+      - name: Commit health report
+        run: |
+          git config user.name  "Lyra-Bot"
+          git config user.email "lyra@noreply.github.com"
+          git add data/health_report.json || true
+          git commit -m "health: daily check [$(date -u +%Y-%m-%d)]" || true
+          git push
+
+---
+name: Lyra Memory Compression
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'   # Weekly Sunday 3am UTC
+  workflow_dispatch:
+
+jobs:
+  memory_compress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LYRA_PAT }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -q requests
+
+      - name: Run Memory Compression
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -c "
+from src.memory_manager import MemoryManager
+mm = MemoryManager('.')
+mm.process_tier_promotions()
+print('Memory compression complete')
+"
+
+      - name: Commit memory state
+        run: |
+          git config user.name  "Lyra-Bot"
+          git config user.email "lyra@noreply.github.com"
+          git add memory/ || true
+          git commit -m "memory: weekly compression $(date -u +%Y-%m-%d)" || true
+          git push
