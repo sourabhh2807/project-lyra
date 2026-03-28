@@ -1,0 +1,60 @@
+{
+  "shorts_title": "The Smurfs' Dark Secret",
+  "full_narration": "Imagine a world where cute, blue creatures are hiding a sinister past. Did you know the Smurfs were created during the height of the Cold War? Belgian comic artist Peyo was influenced by the post-war fear of communism. This led to the Smurfs being depicted as refugees from an occupied village, hiding in the forest. But that's not all - the original Smurf comic strip contained anti-communist propaganda. What if I told you the Smurfs' origins are rooted in the darkest era of human history?",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Imagine a world where cute, blue creatures are hiding a sinister past.",
+      "visual_description": "A close-up of a Smurf with a shadowy background.",
+      "text_overlay": "Smurfs: The Dark Truth",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 10,
+      "narration": "Did you know the Smurfs were created during the height of the Cold War?",
+      "visual_description": "An old news headline about the Cold War.",
+      "text_overlay": "Cold War Era",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 15,
+      "narration": "Belgian comic artist Peyo was influenced by the post-war fear of communism.",
+      "visual_description": "An image of Peyo's early work with communist symbols.",
+      "text_overlay": "Peyo's Inspiration",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "This led to the Smurfs being depicted as refugees from an occupied village, hiding in the forest.",
+      "visual_description": "An image of Smurfs hiding in the forest.",
+      "text_overlay": "Occupied Village",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 5,
+      "duration_estimate_sec": 10,
+      "narration": "But that's not all - the original Smurf comic strip contained anti-communist propaganda.",
+      "visual_description": "An image of the original Smurf comic strip.",
+      "text_overlay": "Original Smurf Comic Strip",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 6,
+      "duration_estimate_sec": 10,
+      "narration": "What if I told you the Smurfs' origins are rooted in the darkest era of human history?",
+      "visual_description": "A dark image of the Smurfs' village with a nuclear explosion in the background.",
+      "text_overlay": "Smurfs: The Dark Truth",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}

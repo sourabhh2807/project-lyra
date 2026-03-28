@@ -1,0 +1,42 @@
+{
+  "shorts_title": "1 in 4 Murders Linked to Psychopathy",
+  "full_narration": "Imagine, 1 in 4 murders is committed by someone with psychopathic traits. That's right, 25% of all homicides. Forensic psychology helps us understand the dark minds behind these crimes. Did you know that psychopaths are often charming, manipulative, and lack empathy? They're like chameleons, adapting to their surroundings while hiding their true nature. Forensic psychologists analyze evidence to predict future behavior, helping keep communities safe. But can we truly stop a psychopath with a PhD in manipulation?",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "1 in 4 murders is linked to psychopathy.",
+      "visual_description": "A split-screen with a crime scene and a psychopath's smile.",
+      "text_overlay": "25% of all homicides",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 15,
+      "narration": "Psychopaths are charming, manipulative, and lack empathy.",
+      "visual_description": "A montage of a psychopath in different scenarios.",
+      "text_overlay": "Adapting to their surroundings while hiding their true nature",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "Forensic psychologists analyze evidence to predict future behavior.",
+      "visual_description": "A forensic psychologist working in a lab.",
+      "text_overlay": "Helping keep communities safe",
+      "intensity": "medium",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "But can we truly stop a psychopath?",
+      "visual_description": "A shadowy figure watching the forensic psychologist.",
+      "text_overlay": "A PhD in manipulation",
+      "intensity": "high",
+      "pacing": "slow"
+    }
+  ]
+}
