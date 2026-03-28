@@ -1,0 +1,86 @@
+{
+  "hook_type": {
+    "values": ["shock_statement", "curiosity_gap", "specificity", "identity_callout", "contrarian_claim", "transformation_promise", "question_hook", "statistic_shock"],
+    "priors": {"shock_statement": 0.20, "curiosity_gap": 0.20, "specificity": 0.15, "identity_callout": 0.15, "contrarian_claim": 0.10, "transformation_promise": 0.10, "question_hook": 0.05, "statistic_shock": 0.05},
+    "win_rates": {"shock_statement": 0.0, "curiosity_gap": 0.0, "specificity": 0.0, "identity_callout": 0.0, "contrarian_claim": 0.0, "transformation_promise": 0.0, "question_hook": 0.0, "statistic_shock": 0.0},
+    "sample_counts": {"shock_statement": 0, "curiosity_gap": 0, "specificity": 0, "identity_callout": 0, "contrarian_claim": 0, "transformation_promise": 0, "question_hook": 0, "statistic_shock": 0}
+  },
+  "hook_duration_sec": {
+    "values": [2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0],
+    "priors": {"2.5": 0.10, "3.0": 0.15, "3.5": 0.20, "4.0": 0.20, "4.5": 0.15, "5.0": 0.10, "5.5": 0.05, "6.0": 0.05},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "narrative_structure": {
+    "values": ["documentary_reveal", "myth_busting", "transformation_story", "case_study", "comparison", "listicle_elevated", "deep_dive", "controversy_analysis"],
+    "priors": {"documentary_reveal": 0.20, "myth_busting": 0.15, "transformation_story": 0.15, "case_study": 0.15, "comparison": 0.15, "listicle_elevated": 0.10, "deep_dive": 0.05, "controversy_analysis": 0.05},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "payoff_placement_pct": {
+    "values": [0.55, 0.60, 0.65, 0.70, 0.75, 0.80],
+    "priors": {"0.55": 0.10, "0.60": 0.15, "0.65": 0.25, "0.70": 0.25, "0.75": 0.15, "0.80": 0.10},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "narration_style": {
+    "values": ["authoritative_dramatic", "conversational_engaging", "teacher_clear", "storyteller", "provocateur", "investigative"],
+    "priors": {"authoritative_dramatic": 0.20, "conversational_engaging": 0.20, "teacher_clear": 0.20, "storyteller": 0.20, "provocateur": 0.10, "investigative": 0.10},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "narration_pace_wpm": {
+    "values": [130, 140, 150, 155, 160, 165, 170, 180, 190],
+    "priors": {"130": 0.05, "140": 0.10, "150": 0.15, "155": 0.15, "160": 0.20, "165": 0.15, "170": 0.10, "180": 0.05, "190": 0.05},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "pacing_profile": {
+    "values": ["fast_hook_slow_reveal", "constant_medium", "cinematic", "rapid_fire", "build_and_release"],
+    "priors": {"fast_hook_slow_reveal": 0.30, "constant_medium": 0.20, "cinematic": 0.20, "rapid_fire": 0.15, "build_and_release": 0.15},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "title_archetype": {
+    "values": ["the_truth_about", "what_nobody_tells_you", "the_dark_side_of", "why_x_actually", "the_real_reason", "x_things_that", "the_shocking_truth", "inside_x", "how_x_changed_everything", "the_hidden_history_of", "what_happened_to", "the_story_of"],
+    "priors": {"the_truth_about": 0.12, "what_nobody_tells_you": 0.10, "the_dark_side_of": 0.10, "why_x_actually": 0.10, "the_real_reason": 0.10, "x_things_that": 0.08, "the_shocking_truth": 0.08, "inside_x": 0.08, "how_x_changed_everything": 0.08, "the_hidden_history_of": 0.08, "what_happened_to": 0.04, "the_story_of": 0.04},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "thumbnail_style": {
+    "values": ["dark_contrast_text", "face_expression_text", "tech_visual_text", "before_after", "question_overlay", "shocking_image_text", "minimal_bold", "comparison_split"],
+    "priors": {"dark_contrast_text": 0.15, "face_expression_text": 0.15, "tech_visual_text": 0.15, "before_after": 0.15, "question_overlay": 0.10, "shocking_image_text": 0.10, "minimal_bold": 0.10, "comparison_split": 0.10},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "open_loop_count": {
+    "values": [1, 2, 3],
+    "priors": {"1": 0.20, "2": 0.50, "3": 0.30},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "explanation_depth": {
+    "values": ["surface", "medium", "deep"],
+    "priors": {"surface": 0.15, "medium": 0.55, "deep": 0.30},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "source_citation_density": {
+    "values": ["none", "light", "moderate", "heavy"],
+    "priors": {"none": 0.10, "light": 0.35, "moderate": 0.40, "heavy": 0.15},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "bgm_genre": {
+    "values": ["cinematic_tension", "lo_fi_tense", "electronic_build", "dark_ambient", "uplift_drive", "neutral_subtle", "dramatic_orchestral"],
+    "priors": {"cinematic_tension": 0.20, "lo_fi_tense": 0.15, "electronic_build": 0.15, "dark_ambient": 0.15, "uplift_drive": 0.15, "neutral_subtle": 0.10, "dramatic_orchestral": 0.10},
+    "win_rates": {},
+    "sample_counts": {}
+  },
+  "video_format": {
+    "values": ["horizontal_landscape", "vertical_portrait"],
+    "priors": {"horizontal_landscape": 0.50, "vertical_portrait": 0.50},
+    "win_rates": {},
+    "sample_counts": {}
+  }
+}
