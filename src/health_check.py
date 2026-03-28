@@ -5,7 +5,7 @@ Opens GitHub Issues automatically if critical checks fail.
 import os, json, glob, sys
 from datetime import datetime, timezone, timedelta
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def check():
     issues = []
