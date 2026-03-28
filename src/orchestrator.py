@@ -135,7 +135,8 @@ def run_generate(slot=None):
             short_audio = voice_gen.synthesize(scripts["shorts_script"], s, "short")
 
             if not long_audio:
-                log.error(f"Slot {s}: Voice generation failed")
+                log.error(f"Slot {s}: Voice generation failed — no audio produced")
+                log_error("voice_gen", s, "Voice generation returned None for long audio")
                 continue
 
             # 5. Generate visuals
@@ -149,7 +150,8 @@ def run_generate(slot=None):
                                              genome, s, "short")
 
             if not long_video:
-                log.error(f"Slot {s}: Video assembly failed")
+                log.error(f"Slot {s}: Video assembly failed — no video produced")
+                log_error("video_assembly", s, "Video assembly returned None")
                 continue
 
             # 7. Thumbnail
