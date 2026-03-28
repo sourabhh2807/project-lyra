@@ -22,5 +22,23 @@
     "phase": "script_gen",
     "channel_slot": 2,
     "error": "Script generation returned None"
+  },
+  {
+    "ts": "2026-03-28T18:18:01.174865+00:00",
+    "phase": "voice_gen",
+    "channel_slot": 0,
+    "error": "Voice generation returned None for long audio"
+  },
+  {
+    "ts": "2026-03-28T18:18:05.885035+00:00",
+    "phase": "voice_gen",
+    "channel_slot": 1,
+    "error": "Voice generation returned None for long audio"
+  },
+  {
+    "ts": "2026-03-28T18:18:06.284878+00:00",
+    "phase": "script_gen",
+    "channel_slot": 2,
+    "error": "Script generation returned None"
   }
 ]

@@ -1,0 +1,60 @@
+{
+  "shorts_title": "Melania's Dark Secrets Exposed",
+  "full_narration": "What if everything you thought you knew about Melania Trump was a lie? Did you know her modeling days were shrouded in controversy? She was accused of stealing a model's identity, and her career was almost ruined. But that's not all - her family in Slovenia has a dark history of supporting the Yugoslav Secret Police. And during the 2016 election, rumors surfaced about her alleged connections to organized crime. What really happened during her modeling days, and what's the truth about her family's past?",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "What if everything you thought you knew about Melania Trump was a lie?",
+      "visual_description": "Distorted close-up of Melania Trump's face",
+      "text_overlay": "The Real Melania Trump?",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 10,
+      "narration": "Did you know her modeling days were shrouded in controversy?",
+      "visual_description": "Archival footage of Melania Trump modeling",
+      "text_overlay": "Stealing Identities",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "She was accused of stealing a model's identity, and her career was almost ruined.",
+      "visual_description": "Cut of Melania Trump in a compromising position",
+      "text_overlay": "Modeling Scandal",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "Her family in Slovenia has a dark history of supporting the Yugoslav Secret Police.",
+      "visual_description": "Footage of Slovenian police in the 80s",
+      "text_overlay": "Family Ties",
+      "intensity": "medium",
+      "pacing": "slow"
+    },
+    {
+      "scene_id": 5,
+      "duration_estimate_sec": 10,
+      "narration": "And during the 2016 election, rumors surfaced about her alleged connections to organized crime.",
+      "visual_description": "Distorted footage of police sirens",
+      "text_overlay": "The Truth Behind the Rumors",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 6,
+      "duration_estimate_sec": 10,
+      "narration": "What really happened during her modeling days, and what's the truth about her family's past?",
+      "visual_description": "Distorted close-up of Melania Trump's face",
+      "text_overlay": "The Dark Truth",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}

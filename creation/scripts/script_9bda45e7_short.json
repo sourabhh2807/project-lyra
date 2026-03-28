@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Dark Secrets in Urdu: The Shocking Truth",
+  "full_narration": "Are you ready to uncover the darkest corners of the human mind? Did you know that a single psychology book in Urdu has been downloaded over 100,000 times in the past year alone? This mind-bending book reveals the dark psychology of manipulation, control, and persuasion. It exposes the techniques used by cult leaders, con artists, and even some politicians to manipulate the masses. But be warned, once you know the truth, you can never go back to being naive again.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Are you ready to uncover the darkest corners of the human mind?",
+      "visual_description": "A dimly lit, eerie room with shadows dancing on the walls",
+      "text_overlay": "Dark Secrets Ahead",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 10,
+      "narration": "A single psychology book in Urdu has been downloaded over 100,000 times in the past year alone",
+      "visual_description": "A screenshot of a download statistics page with a massive spike",
+      "text_overlay": "1,00,000 Downloads and Counting",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 15,
+      "narration": "It exposes the techniques used by cult leaders, con artists, and even some politicians to manipulate the masses",
+      "visual_description": "A split-screen comparison of a charismatic leader and their brainwashed followers",
+      "text_overlay": "The Dark Art of Manipulation",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "But be warned, once you know the truth, you can never go back to being naive again",
+      "visual_description": "A person looking at a book with a shocked expression",
+      "text_overlay": "The Truth Will Haunt You",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}
