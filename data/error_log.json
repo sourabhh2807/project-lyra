@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "ts": "2026-03-28T11:25:03.867095+00:00",
+    "phase": "script_gen",
+    "channel_slot": 0,
+    "error": "Script generation returned None"
+  }
+]

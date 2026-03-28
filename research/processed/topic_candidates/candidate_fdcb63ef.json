@@ -1,7 +1,7 @@
 {
-  "topic_id": "f3334990-004f-44d2-9ed6-b1025f92f176",
-  "topic": "India&#39;s Hidden Civilization \ud83d\ude31 #facts #history #keeladi #mystery #southindia #dark #ytshorts #shorts",
-  "niche": "dark_history",
+  "topic_id": "fdcb63ef-c737-4c6c-9fb8-5547db1ad427",
+  "topic": "what is agi in artificial intelligence",
+  "niche": "ai_explained",
   "why_now": "Trending signal detected",
   "audience_state": "entertainment-seeking",
   "novelty_score": 0.5,
@@ -19,9 +19,9 @@
   "trigger_type_recommended": "curiosity_gap",
   "emotional_dimension_primary": "curiosity",
   "evidence_sources": [
-    "youtube_trending"
+    "google_trends"
   ],
-  "source_signal": "India&#39;s Hidden Civilization \ud83d\ude31 #facts #history #keeladi #mystery #southindia #dark #ytshorts #shorts",
-  "status": "in_creation",
-  "created_at": "2026-03-28T10:07:08.640418+00:00"
+  "source_signal": "what is agi in artificial intelligence",
+  "status": "queued",
+  "created_at": "2026-03-28T11:25:01.179870+00:00"
 }
