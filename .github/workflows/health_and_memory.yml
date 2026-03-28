@@ -52,14 +52,15 @@ jobs:
         run: mkdir -p memory/short_term memory/mid_term memory/long_term memory/evergreen
 
       - name: Run Memory Manager
-        run: python -c "
-import sys, os
-sys.path.insert(0, os.getcwd())
-from src.memory_manager import MemoryManager
-mm = MemoryManager(os.getcwd())
-mm.process_tier_promotions()
-print('Memory compression complete')
-"
+        run: |
+          python3 << 'PYEOF'
+          import sys, os
+          sys.path.insert(0, os.getcwd())
+          from src.memory_manager import MemoryManager
+          mm = MemoryManager(os.getcwd())
+          mm.process_tier_promotions()
+          print('Memory compression complete')
+          PYEOF
 
       - name: Commit memory updates
         run: |
