@@ -20,7 +20,7 @@ class AnalyticsAgent:
 
     def pull_and_score(self, slot):
         """Pull analytics for all recent uploads on slot, compute fitness, update DB."""
-        token = os.environ.get(f"YT_OAUTH_TOKEN_{slot}", "")
+        token = os.environ.get("YT_OAUTH_TOKEN_0", "") or os.environ.get(f"YT_OAUTH_TOKEN_{slot}", "")
         if not token:
             log.warning(f"No token for slot {slot}, skipping analytics")
             return
