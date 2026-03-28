@@ -1,0 +1,100 @@
+{
+  "patterns": [
+    {
+      "id": "the_truth_about",
+      "template": "The Truth About {SUBJECT} They Never Told You",
+      "example": "The Truth About Sleep Deprivation They Never Told You",
+      "best_for": ["dark_history", "psychology_hacks"],
+      "emotion": "revelation",
+      "ctr_modifier": 1.1
+    },
+    {
+      "id": "what_nobody_tells_you",
+      "template": "What Nobody Tells You About {SUBJECT}",
+      "example": "What Nobody Tells You About AI Replacing Jobs",
+      "best_for": ["ai_explained", "psychology_hacks"],
+      "emotion": "insider_knowledge",
+      "ctr_modifier": 1.05
+    },
+    {
+      "id": "the_dark_side_of",
+      "template": "The Dark Side of {SUBJECT} Nobody Talks About",
+      "example": "The Dark Side of the Roman Empire Nobody Talks About",
+      "best_for": ["dark_history"],
+      "emotion": "taboo_revelation",
+      "ctr_modifier": 1.15
+    },
+    {
+      "id": "why_x_actually",
+      "template": "Why {SUBJECT} Is Actually {SURPRISING_CLAIM}",
+      "example": "Why Your Memory Is Actually Lying To You",
+      "best_for": ["psychology_hacks", "ai_explained"],
+      "emotion": "surprise_reversal",
+      "ctr_modifier": 1.08
+    },
+    {
+      "id": "the_real_reason",
+      "template": "The Real Reason {SUBJECT} {ACTION}",
+      "example": "The Real Reason Ancient Civilizations Disappeared",
+      "best_for": ["dark_history", "ai_explained"],
+      "emotion": "curiosity_gap",
+      "ctr_modifier": 1.12
+    },
+    {
+      "id": "x_things_that",
+      "template": "{NUMBER} {SUBJECT} Facts That Will Change How You Think",
+      "example": "7 Psychology Facts That Will Change How You Think",
+      "best_for": ["psychology_hacks"],
+      "emotion": "practical_utility",
+      "ctr_modifier": 1.00
+    },
+    {
+      "id": "the_shocking_truth",
+      "template": "The Shocking Truth Behind {SUBJECT}",
+      "example": "The Shocking Truth Behind Modern Propaganda",
+      "best_for": ["dark_history"],
+      "emotion": "shock",
+      "ctr_modifier": 1.08
+    },
+    {
+      "id": "inside_x",
+      "template": "Inside {SUBJECT}: What They Don't Want You To Know",
+      "example": "Inside the Algorithm: What They Don't Want You To Know",
+      "best_for": ["ai_explained", "dark_history"],
+      "emotion": "conspiracy_adjacent",
+      "ctr_modifier": 1.10
+    },
+    {
+      "id": "how_x_changed",
+      "template": "How {SUBJECT} Changed Everything (And Nobody Noticed)",
+      "example": "How AI Changed Creativity (And Nobody Noticed)",
+      "best_for": ["ai_explained", "dark_history"],
+      "emotion": "significance",
+      "ctr_modifier": 1.06
+    },
+    {
+      "id": "the_hidden_history",
+      "template": "The Hidden History of {SUBJECT}",
+      "example": "The Hidden History of Psychological Warfare",
+      "best_for": ["dark_history"],
+      "emotion": "curiosity",
+      "ctr_modifier": 1.04
+    },
+    {
+      "id": "what_happened_to",
+      "template": "What Actually Happened To {SUBJECT}",
+      "example": "What Actually Happened To The Lost Colony of Roanoke",
+      "best_for": ["dark_history"],
+      "emotion": "mystery",
+      "ctr_modifier": 1.07
+    },
+    {
+      "id": "your_brain_on",
+      "template": "Your Brain On {SUBJECT}: The Science Nobody Explains",
+      "example": "Your Brain On Social Media: The Science Nobody Explains",
+      "best_for": ["psychology_hacks", "ai_explained"],
+      "emotion": "identity_relevance",
+      "ctr_modifier": 1.09
+    }
+  ]
+}

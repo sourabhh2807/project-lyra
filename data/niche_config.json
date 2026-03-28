@@ -1,0 +1,93 @@
+{
+  "niches": {
+    "dark_history": {
+      "display_name": "Dark History",
+      "description": "Disturbing, shocking, and forgotten true stories from history",
+      "target_audience": "History enthusiasts aged 18-35 who love conspiracy, crime, and dark truths",
+      "audience_state_primary": "entertainment-seeking",
+      "identity_archetype": "The truth-seeker who suspects mainstream history hides something darker",
+      "tone": "dramatic, revealing, authoritative",
+      "forbidden_topics": ["glorifying violence", "hate speech", "modern politics"],
+      "evergreen_angles": [
+        "forgotten atrocities",
+        "historical cover-ups",
+        "dark origins of famous things",
+        "real stories behind myths",
+        "secret societies and real history",
+        "medical experiments history",
+        "propaganda and manipulation"
+      ],
+      "trending_seed_keywords": [
+        "dark history", "hidden history", "disturbing history",
+        "history they don't teach", "real history", "forgotten history",
+        "shocking true story", "history untold"
+      ],
+      "long_video_structure": "documentary_reveal",
+      "shorts_hook_style": "shock_statement",
+      "bgm_genre": "cinematic_tension",
+      "thumbnail_style": "dark_contrast_text",
+      "competitor_channels": [
+        "Dark Docs", "Plainly Difficult", "Simple History", "Weird History"
+      ]
+    },
+    "psychology_hacks": {
+      "display_name": "Psychology & Behavior",
+      "description": "How the human mind actually works — dark psychology, manipulation, behavior science",
+      "target_audience": "Young adults 20-40 interested in self-improvement, understanding people, social dynamics",
+      "audience_state_primary": "solution-aware",
+      "identity_archetype": "The self-aware individual who wants to understand what drives human behavior",
+      "tone": "conversational, insightful, occasionally provocative",
+      "forbidden_topics": ["harmful manipulation guides", "abusive relationship advice"],
+      "evergreen_angles": [
+        "cognitive biases explained",
+        "dark psychology tactics",
+        "how persuasion really works",
+        "reading people accurately",
+        "why people make bad decisions",
+        "social dynamics and status",
+        "emotional intelligence deep dives"
+      ],
+      "trending_seed_keywords": [
+        "psychology facts", "dark psychology", "human behavior",
+        "cognitive bias", "manipulation tactics", "body language",
+        "why people do things", "mind tricks"
+      ],
+      "long_video_structure": "explanation_with_examples",
+      "shorts_hook_style": "curiosity_gap",
+      "bgm_genre": "lo_fi_tense",
+      "thumbnail_style": "face_expression_text",
+      "competitor_channels": [
+        "Charisma on Command", "Psychology Today", "Better Ideas", "Einzelganger"
+      ]
+    },
+    "ai_explained": {
+      "display_name": "AI & Tech Explained",
+      "description": "Complex AI and tech concepts explained simply, with real implications",
+      "target_audience": "Tech-curious adults 18-45, not necessarily technical, who want to understand the AI revolution",
+      "audience_state_primary": "problem-aware",
+      "identity_archetype": "The forward-thinking person who wants to understand the future before it arrives",
+      "tone": "clear, energetic, grounded, honest about hype vs reality",
+      "forbidden_topics": ["misinformation about AI capabilities", "fearmongering"],
+      "evergreen_angles": [
+        "how AI models actually work",
+        "AI changing specific industries",
+        "what AI can and cannot do",
+        "future of work with AI",
+        "AI ethics and risks",
+        "breakthroughs explained simply",
+        "AI tools you should know"
+      ],
+      "trending_seed_keywords": [
+        "AI explained", "artificial intelligence", "ChatGPT", "machine learning",
+        "future of AI", "AI news", "tech explained", "how AI works"
+      ],
+      "long_video_structure": "teacher_explainer",
+      "shorts_hook_style": "specificity_statement",
+      "bgm_genre": "electronic_build",
+      "thumbnail_style": "tech_visual_text",
+      "competitor_channels": [
+        "Two Minute Papers", "Fireship", "AI Explained", "Andrej Karpathy"
+      ]
+    }
+  }
+}
