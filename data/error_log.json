@@ -4,5 +4,11 @@
     "phase": "script_gen",
     "channel_slot": 0,
     "error": "Script generation returned None"
+  },
+  {
+    "ts": "2026-03-28T11:38:37.387630+00:00",
+    "phase": "script_gen",
+    "channel_slot": 0,
+    "error": "Script generation returned None"
   }
 ]
