@@ -2,7 +2,7 @@ name: Lyra Research Continuous
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Every hour
+    - cron: '0 */3 * * *'   # Every 3 hours (saves Actions minutes vs hourly)
   workflow_dispatch:
 
 jobs:
@@ -22,6 +22,11 @@ jobs:
       - name: Install dependencies
         run: pip install -q requests pytrends google-generativeai
 
+      - name: Create directories
+        run: |
+          mkdir -p research/raw/trends research/raw/competitors research/raw/comments
+          mkdir -p research/processed/topic_candidates research/processed/audience_maps research/processed/saturation_maps
+
       - name: Run Research Agent
         env:
           GEMINI_API_KEY:  ${{ secrets.GEMINI_API_KEY }}
@@ -32,6 +37,6 @@ jobs:
         run: |
           git config user.name  "Lyra-Bot"
           git config user.email "lyra@noreply.github.com"
-          git add research/ || true
-          git commit -m "research: topics updated [$(date -u +%Y-%m-%d %H:%M)]" || true
-          git push
+          git add research/ data/ || true
+          git diff --cached --quiet || git commit -m "research: topics updated [$(date -u +%Y-%m-%d %H:%M)]"
+          git push || true
