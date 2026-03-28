@@ -1,0 +1,35 @@
+# OAuth tokens — NEVER commit
+token_slot*.json
+client_secrets_slot*.json
+*.credentials.json
+.env
+
+# Rendered video files (large, temporary)
+execution/render/
+creation/voice/
+creation/visuals/slot*/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test artifacts
+*.tmp
+*.temp
