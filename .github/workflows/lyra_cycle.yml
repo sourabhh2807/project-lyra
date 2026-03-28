@@ -1,1 +1,140 @@
+name: Lyra Master Cycle
 
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # Every 6 hours
+  workflow_dispatch:          # Manual trigger for testing
+
+jobs:
+  generate_slot_0:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LYRA_PAT }}
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -q requests python-dotenv google-generativeai \
+            google-auth google-auth-oauthlib google-api-python-client \
+            pytrends edge-tts Pillow librosa soundfile numpy pytrends
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Init DB (if first run)
+        run: python init_db.py
+
+      - name: Run Research
+        env:
+          GEMINI_API_KEY:   ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY:  ${{ secrets.YOUTUBE_API_KEY }}
+          GROQ_API_KEY:     ${{ secrets.GROQ_API_KEY }}
+        run: python src/orchestrator.py --phase=research
+
+      - name: Generate Content - Slot 0
+        env:
+          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY:       ${{ secrets.YOUTUBE_API_KEY }}
+          GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
+          HF_API_KEY:            ${{ secrets.HF_API_KEY }}
+          YT_OAUTH_TOKEN_0:      ${{ secrets.YT_OAUTH_TOKEN_0 }}
+        run: python src/orchestrator.py --phase=generate --channel_slot=0
+
+      - name: Commit state
+        run: |
+          git config user.name  "Lyra-Bot"
+          git config user.email "lyra@noreply.github.com"
+          git add data/ memory/ research/processed/ reflection/ \
+                  creation/briefs/ execution/publish_logs/ || true
+          git commit -m "cycle: slot0 gen-$(cat data/.gen_counter) [$(date -u +%H:%M)]" || true
+          git push
+
+  generate_slot_1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: generate_slot_0   # Stagger to avoid git conflicts
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LYRA_PAT }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -q requests python-dotenv google-generativeai \
+            google-auth google-auth-oauthlib google-api-python-client \
+            pytrends edge-tts Pillow librosa soundfile numpy
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Generate Content - Slot 1
+        env:
+          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY:       ${{ secrets.YOUTUBE_API_KEY }}
+          GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
+          HF_API_KEY:            ${{ secrets.HF_API_KEY }}
+          YT_OAUTH_TOKEN_1:      ${{ secrets.YT_OAUTH_TOKEN_1 }}
+        run: python src/orchestrator.py --phase=generate --channel_slot=1
+
+      - name: Commit state
+        run: |
+          git config user.name  "Lyra-Bot"
+          git config user.email "lyra@noreply.github.com"
+          git add data/ memory/ research/processed/ reflection/ \
+                  creation/briefs/ execution/publish_logs/ || true
+          git commit -m "cycle: slot1 gen-$(cat data/.gen_counter) [$(date -u +%H:%M)]" || true
+          git push
+
+  generate_slot_2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: generate_slot_1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LYRA_PAT }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -q requests python-dotenv google-generativeai \
+            google-auth google-auth-oauthlib google-api-python-client \
+            pytrends edge-tts Pillow librosa soundfile numpy
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Generate Content - Slot 2
+        env:
+          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY:       ${{ secrets.YOUTUBE_API_KEY }}
+          GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
+          HF_API_KEY:            ${{ secrets.HF_API_KEY }}
+          YT_OAUTH_TOKEN_2:      ${{ secrets.YT_OAUTH_TOKEN_2 }}
+        run: python src/orchestrator.py --phase=generate --channel_slot=2
+
+      - name: Commit state
+        run: |
+          git config user.name  "Lyra-Bot"
+          git config user.email "lyra@noreply.github.com"
+          git add data/ memory/ research/processed/ reflection/ \
+                  creation/briefs/ execution/publish_logs/ || true
+          git commit -m "cycle: slot2 gen-$(cat data/.gen_counter) [$(date -u +%H:%M)]" || true
+          git push
