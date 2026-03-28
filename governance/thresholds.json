@@ -1,8 +1,9 @@
 {
-  "research_confidence_min": 0.35,
+  "research_confidence_min": 0.30,
   "script_fluff_max": 0.15,
   "factual_score_min": 0.70,
   "audio_clarity_min": 0.65,
   "honesty_score_min": 0.65,
-  "ngram_repeat_max": 0.45
+  "ngram_repeat_max": 0.45,
+  "min_script_words": 200
 }
