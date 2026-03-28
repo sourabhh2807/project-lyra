@@ -23,7 +23,7 @@ VOICE_MAP = {
 }
 
 RATE_MAP = {
-    130: "-15%", 140: "-10%", 150: "-5%", 155: "0%",
+    130: "-15%", 140: "-10%", 150: "-5%", 155: "+0%",
     160: "+3%", 165: "+5%", 170: "+8%", 180: "+12%", 190: "+15%"
 }
 
@@ -45,7 +45,7 @@ class VoiceGenerator:
         # Get pace from learning champions
         learning = self._load_learning()
         wpm_key = str(learning.get("champion_alleles", {}).get("narration_pace_wpm", 155))
-        rate = RATE_MAP.get(int(wpm_key) if wpm_key.isdigit() else 155, "0%")
+        rate = RATE_MAP.get(int(wpm_key) if wpm_key.isdigit() else 155, "+0%")
 
         voice = VOICE_MAP.get(voice_style, VOICE_MAP["default"])
         out_dir = os.path.join(self.root, "creation/voice")
