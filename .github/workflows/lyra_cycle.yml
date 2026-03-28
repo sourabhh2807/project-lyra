@@ -96,6 +96,7 @@ jobs:
           git add data/ memory/ research/processed/ reflection/ \
                   creation/briefs/ execution/publish_logs/ || true
           git commit -m "cycle: slot1 gen-$(cat data/.gen_counter) [$(date -u +%H:%M)]" || true
+          git pull --rebase origin main || true
           git push
 
   generate_slot_2:
@@ -137,4 +138,5 @@ jobs:
           git add data/ memory/ research/processed/ reflection/ \
                   creation/briefs/ execution/publish_logs/ || true
           git commit -m "cycle: slot2 gen-$(cat data/.gen_counter) [$(date -u +%H:%M)]" || true
+          git pull --rebase origin main || true
           git push
