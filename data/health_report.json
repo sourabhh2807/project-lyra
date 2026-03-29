@@ -1,1 +1,39 @@
-{"status": "not_run_yet", "issues": [], "ts": ""}
+{
+  "ts": "2026-03-29T08:34:08.004548+00:00",
+  "status": "unhealthy",
+  "issues": [
+    "Channel DarkHistoryVault has NEVER uploaded",
+    "Channel MindWireDaily has NEVER uploaded",
+    "Channel TechPulseAI has NEVER uploaded",
+    "18 errors in last 24h"
+  ],
+  "ok": [
+    "Research pipeline has 552 topics queued \u2713",
+    "Genome DB healthy \u2014 0 genomes \u2713",
+    "Memory: 0 long-term rules | 0 mid-term \u2713"
+  ],
+  "generation": 2,
+  "epsilon": 0.3,
+  "db_stats": {
+    "total": 0,
+    "published": 0,
+    "evaluated": 0,
+    "avg_fitness": 0.0,
+    "best_fitness": 0.0
+  },
+  "niche_stats": {},
+  "memory_counts": {
+    "short_term": 0,
+    "mid_term": 0,
+    "long_term": 0,
+    "evergreen": 0
+  },
+  "top_topics": [
+    "Har Ki Pauri da Sach | Golden Temple Hidden History | Sikh History Sri Harmandir Sahib | Waheguru ji",
+    "svm machine learning",
+    "what is machine learning",
+    "python programming",
+    "what is agi"
+  ],
+  "champions": {}
+}
