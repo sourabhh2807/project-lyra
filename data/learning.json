@@ -1,27 +1,60 @@
 {
   "system_version": "9.0",
   "generation": 0,
-  "epsilon": 0.30,
+  "epsilon": 0.3,
   "epsilon_min": 0.05,
   "epsilon_decay": 0.005,
-  "quality_threshold": 0.50,
+  "quality_threshold": 0.5,
   "fitness_history": [],
   "channel_performance": {
-    "0": {"avg_fitness": 0.0, "total_videos": 0, "last_upload": null, "upload_days_this_week": 0},
-    "1": {"avg_fitness": 0.0, "total_videos": 0, "last_upload": null, "upload_days_this_week": 0},
-    "2": {"avg_fitness": 0.0, "total_videos": 0, "last_upload": null, "upload_days_this_week": 0}
+    "0": {
+      "avg_fitness": 0.0,
+      "total_videos": 1,
+      "last_upload": "2026-03-29T10:30:04.830041+00:00",
+      "upload_days_this_week": 0
+    },
+    "1": {
+      "avg_fitness": 0.0,
+      "total_videos": 1,
+      "last_upload": "2026-03-29T10:30:50.762978+00:00",
+      "upload_days_this_week": 0
+    },
+    "2": {
+      "avg_fitness": 0.0,
+      "total_videos": 1,
+      "last_upload": "2026-03-29T10:32:04.891783+00:00",
+      "upload_days_this_week": 0
+    }
   },
   "champion_alleles": {},
   "penalized_alleles": {},
   "niche_performance": {
-    "dark_history": {"avg_fitness": 0.0, "video_count": 0},
-    "psychology_hacks": {"avg_fitness": 0.0, "video_count": 0},
-    "ai_explained": {"avg_fitness": 0.0, "video_count": 0}
+    "dark_history": {
+      "avg_fitness": 0.0,
+      "video_count": 0
+    },
+    "psychology_hacks": {
+      "avg_fitness": 0.0,
+      "video_count": 0
+    },
+    "ai_explained": {
+      "avg_fitness": 0.0,
+      "video_count": 0
+    }
   },
   "upload_timing": {
-    "0": {"best_hour_utc": 14, "best_day": "Saturday"},
-    "1": {"best_hour_utc": 15, "best_day": "Sunday"},
-    "2": {"best_hour_utc": 13, "best_day": "Friday"}
+    "0": {
+      "best_hour_utc": 14,
+      "best_day": "Saturday"
+    },
+    "1": {
+      "best_hour_utc": 15,
+      "best_day": "Sunday"
+    },
+    "2": {
+      "best_hour_utc": 13,
+      "best_day": "Friday"
+    }
   },
   "knowledge_count": 0,
   "experiment_count": 0,

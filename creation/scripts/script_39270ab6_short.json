@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Hidden Truth of Harmandir Sahib",
+  "full_narration": "Beware, what you're about to learn will change your perspective on Sikh history. Sri Harmandir Sahib, the Golden Temple, holds secrets. Did you know it was initially built on a lower level? The water level was higher, and Guru Arjan Dev chose this site for a reason. The location of the temple is not a coincidence, but a deliberate choice based on ancient Hindu scriptures. As we delve deeper, questions arise: What lies beneath the temple, and why was it built in this specific location? The truth is more astonishing than you think.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 8,
+      "narration": "Beware, what you're about to learn will change your perspective on Sikh history.",
+      "visual_description": "Aerial shot of the Golden Temple at sunrise",
+      "text_overlay": "Sri Harmandir Sahib: The Golden Temple",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 10,
+      "narration": "Sri Harmandir Sahib, the Golden Temple, holds secrets. Did you know it was initially built on a lower level?",
+      "visual_description": "Historical images of the temple's construction",
+      "text_overlay": "The Original Site",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 12,
+      "narration": "The water level was higher, and Guru Arjan Dev chose this site for a reason. The location of the temple is not a coincidence, but a deliberate choice based on ancient Hindu scriptures.",
+      "visual_description": "Maps and scriptures on screen",
+      "text_overlay": "A Deliberate Choice",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "As we delve deeper, questions arise: What lies beneath the temple, and why was it built in this specific location? The truth is more astonishing than you think.",
+      "visual_description": "A close-up of the temple's foundation",
+      "text_overlay": "The Hidden Truth",
+      "intensity": "high",
+      "pacing": "slow"
+    }
+  ]
+}

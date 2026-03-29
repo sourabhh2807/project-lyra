@@ -1,7 +1,7 @@
 {
-  "topic_id": "986f69ae-13b6-4976-8577-7ab9697ce00a",
-  "topic": "svm machine learning",
-  "niche": "ai_explained",
+  "topic_id": "228990fc-e6ee-4c2f-b925-4e2e4e37ad19",
+  "topic": "The Dark Past of Iranian Regime | Revolution to Repression | Syed Muzammil Official",
+  "niche": "dark_history",
   "why_now": "Trending signal detected",
   "audience_state": "entertainment-seeking",
   "novelty_score": 0.5,
@@ -19,9 +19,9 @@
   "trigger_type_recommended": "curiosity_gap",
   "emotional_dimension_primary": "curiosity",
   "evidence_sources": [
-    "google_trends"
+    "youtube_trending"
   ],
-  "source_signal": "svm machine learning",
-  "status": "in_creation",
-  "created_at": "2026-03-28T18:32:40.761388+00:00"
+  "source_signal": "The Dark Past of Iranian Regime | Revolution to Repression | Syed Muzammil Official",
+  "status": "queued",
+  "created_at": "2026-03-29T10:28:02.477218+00:00"
 }

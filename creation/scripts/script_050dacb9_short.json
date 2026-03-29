@@ -1,0 +1,42 @@
+{
+  "shorts_title": "SVM Unleashed",
+  "full_narration": "Imagine a world where machines can learn from data and make predictions with ease. You're about to unlock the power of Support Vector Machines, or SVMs. This game-changing tech can transform your business in seconds. With SVM, you can classify data with precision, detect anomalies, and forecast trends. But here's the kicker: SVM isn't just for tech pros. It's a superpower anyone can wield. So, are you ready to unleash the predictive force of SVM and take your business to the next level?",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 8,
+      "narration": "Imagine a world where machines can learn from data and make predictions with ease",
+      "visual_description": "A futuristic cityscape with robots and machines working in harmony",
+      "text_overlay": "The Future of Tech",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 12,
+      "narration": "You're about to unlock the power of Support Vector Machines, or SVMs",
+      "visual_description": "A 3D animation of an SVM algorithm in action",
+      "text_overlay": "SVM: The Predictive Powerhouse",
+      "intensity": "medium",
+      "pacing": "steady"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "With SVM, you can classify data with precision, detect anomalies, and forecast trends",
+      "visual_description": "A split-screen comparison of manual data analysis vs. SVM-powered analysis",
+      "text_overlay": "SVM: Faster, Smarter, Better",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 15,
+      "narration": "But here's the kicker: SVM isn't just for tech pros. It's a superpower anyone can wield. So, are you ready to unleash the predictive force of SVM and take your business to the next level?",
+      "visual_description": "A person holding a tablet with an SVM-powered app, with a cityscape in the background",
+      "text_overlay": "Unleash the Power of SVM",
+      "intensity": "medium",
+      "pacing": "steady"
+    }
+  ]
+}

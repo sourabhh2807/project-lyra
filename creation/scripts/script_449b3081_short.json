@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Dark Secret",
+  "full_narration": "You're being manipulated. The dark mango psychology copypasta is a real thing, affecting your decisions. It's a phrase used to describe how our brains are wired to respond to certain triggers. You're constantly being influenced, from the ads you see to the posts you like. The dark mango effect is real, and it's controlling your behavior. But what if you could break free? What if you could take back control of your mind?",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 8,
+      "narration": "You're being manipulated.",
+      "visual_description": "A person trapped in a maze",
+      "text_overlay": "The Dark Mango Effect",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 12,
+      "narration": "The dark mango psychology copypasta is a real thing, affecting your decisions. It's a phrase used to describe how our brains are wired to respond to certain triggers.",
+      "visual_description": "A brain with gears and wires",
+      "text_overlay": "Triggers & Manipulation",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "You're constantly being influenced, from the ads you see to the posts you like.",
+      "visual_description": "A person scrolling through their phone",
+      "text_overlay": "Influenced & Controlled",
+      "intensity": "low",
+      "pacing": "slow"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 15,
+      "narration": "But what if you could break free? What if you could take back control of your mind?",
+      "visual_description": "A person breaking free from chains",
+      "text_overlay": "Take Back Control",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}
