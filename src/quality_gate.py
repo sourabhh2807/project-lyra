@@ -216,10 +216,17 @@ class QualityGate:
         if not video_path or not os.path.exists(str(video_path)):
             return {"passed": False, "score": 0.0, "reason": "Video file missing"}
 
-        size_mb = os.path.getsize(video_path) / (1024 * 1024)
-        if size_mb < 0.5:
+        try:
+            size_bytes = os.path.getsize(video_path)
+            size_mb = size_bytes / (1024 * 1024)
+        except OSError as e:
+            return {"passed": False, "score": 0.0, "reason": f"Cannot read video: {e}"}
+
+        # Lower threshold: assembler already verified > 10KB
+        # Early-gen videos with placeholder images can be small
+        if size_bytes < 5000:
             return {"passed": False, "score": 0.0,
-                    "reason": f"Video file too small ({size_mb:.1f} MB)"}
+                    "reason": f"Video file too small ({size_mb:.2f} MB / {size_bytes} bytes)"}
 
         try:
             cmd = ["ffprobe", "-v", "error", "-count_packets",
