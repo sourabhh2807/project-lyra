@@ -1,0 +1,27 @@
+{
+  "topic_id": "bbeb998e-8f54-4373-bcbf-5ad62def9d12",
+  "topic": "Firecrawl AI clearly explained (and how to make $$)",
+  "niche": "ai_explained",
+  "why_now": "Trending signal detected",
+  "audience_state": "entertainment-seeking",
+  "novelty_score": 0.5,
+  "saturation_score": 0.5,
+  "authority_fit": 0.6,
+  "research_confidence": 0.4,
+  "content_angles": [],
+  "audience_fears_triggered": [],
+  "audience_goals_served": [],
+  "open_questions": [],
+  "recommended_format": "long",
+  "predicted_half_life_days": 14,
+  "urgency_decay_days": 14,
+  "predicted_fitness": 0.4,
+  "trigger_type_recommended": "curiosity_gap",
+  "emotional_dimension_primary": "curiosity",
+  "evidence_sources": [
+    "youtube_trending"
+  ],
+  "source_signal": "Firecrawl AI clearly explained (and how to make $$)",
+  "status": "queued",
+  "created_at": "2026-03-29T09:32:28.385151+00:00"
+}
