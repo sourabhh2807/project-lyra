@@ -226,7 +226,11 @@ Return ONLY valid JSON, no markdown, no explanation:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={self.gemini_key}"
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.7}
+            "generationConfig": {
+                "maxOutputTokens": max_tokens,
+                "temperature": 0.7,
+                "responseMimeType": "application/json"
+            }
         }
         r = requests.post(url, json=body, timeout=30)
         r.raise_for_status()
