@@ -1,0 +1,27 @@
+{
+  "topic_id": "1b44b35b-b84a-4274-a2fb-e90d73a094bc",
+  "topic": "the dark history of the reincarnated villainess mal",
+  "niche": "dark_history",
+  "why_now": "Trending signal detected",
+  "audience_state": "entertainment-seeking",
+  "novelty_score": 0.5,
+  "saturation_score": 0.5,
+  "authority_fit": 0.6,
+  "research_confidence": 0.4,
+  "content_angles": [],
+  "audience_fears_triggered": [],
+  "audience_goals_served": [],
+  "open_questions": [],
+  "recommended_format": "long",
+  "predicted_half_life_days": 14,
+  "urgency_decay_days": 14,
+  "predicted_fitness": 0.4,
+  "trigger_type_recommended": "curiosity_gap",
+  "emotional_dimension_primary": "curiosity",
+  "evidence_sources": [
+    "google_trends"
+  ],
+  "source_signal": "the dark history of the reincarnated villainess mal",
+  "status": "queued",
+  "created_at": "2026-03-29T06:57:11.500887+00:00"
+}
