@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Quincea\u00f1era Darkness",
+  "full_narration": "Warning: your quincea\u00f1era celebration has a dark past. Behind the vibrant dresses and festivities, lies a history of oppression. The tradition originated from ancient cultures where 15-year-old girls were forced into marriage. In some societies, they were even considered ready for sacrifice. You're participating in a ritual with roots in female subjugation. The quincea\u00f1era's true history is a haunting reminder of women's struggle for freedom.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 8,
+      "narration": "Warning: your quincea\u00f1era celebration has a dark past.",
+      "visual_description": "A dimly lit, abandoned church with a lone, flickering candle",
+      "text_overlay": "Quincea\u00f1era: A Dark History",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 12,
+      "narration": "Behind the vibrant dresses and festivities, lies a history of oppression. The tradition originated from ancient cultures where 15-year-old girls were forced into marriage.",
+      "visual_description": "A rapid sequence of ancient artifacts and old paintings depicting forced marriages",
+      "text_overlay": "Forced Marriages at 15",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "In some societies, they were even considered ready for sacrifice. You're participating in a ritual with roots in female subjugation.",
+      "visual_description": "A haunting, surreal depiction of human sacrifice",
+      "text_overlay": "Sacrificed at 15",
+      "intensity": "very high",
+      "pacing": "slow"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 8,
+      "narration": "The quincea\u00f1era's true history is a haunting reminder of women's struggle for freedom.",
+      "visual_description": "A close-up of a girl's face, looking concerned and trapped",
+      "text_overlay": "The Dark Truth",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}

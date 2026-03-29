@@ -1,0 +1,57 @@
+{
+  "brief_id": "3f372354-d318-450f-ac71-280f095b360f",
+  "slot": 0,
+  "topic": {
+    "topic_id": "954ee428-7a96-4ad6-97e9-dd01ee478ffc",
+    "topic": "quincea\u00f1era dark history",
+    "niche": "dark_history",
+    "why_now": "Trending signal detected",
+    "audience_state": "entertainment-seeking",
+    "novelty_score": 0.5,
+    "saturation_score": 0.5,
+    "authority_fit": 0.6,
+    "research_confidence": 0.4,
+    "content_angles": [],
+    "audience_fears_triggered": [],
+    "audience_goals_served": [],
+    "open_questions": [],
+    "recommended_format": "long",
+    "predicted_half_life_days": 14,
+    "urgency_decay_days": 14,
+    "predicted_fitness": 0.4,
+    "trigger_type_recommended": "curiosity_gap",
+    "emotional_dimension_primary": "curiosity",
+    "evidence_sources": [
+      "google_trends"
+    ],
+    "source_signal": "quincea\u00f1era dark history",
+    "status": "in_creation",
+    "created_at": "2026-03-29T06:08:07.464078+00:00"
+  },
+  "genome_id": "7ffcb472-4ec2-43ff-8359-b0c3bf55b9a0",
+  "metadata": {
+    "title": "What Nobody Tells You About quincea\u00f1era dark history",
+    "description": "In this video we explore: quincea\u00f1era dark history\n\n#DarkHistory",
+    "tags": [
+      "dark history",
+      "hidden history",
+      "disturbing history",
+      "history they don't teach",
+      "real history",
+      "forgotten history",
+      "shocking true story",
+      "history untold"
+    ],
+    "chapters": [
+      {
+        "time": "0:00",
+        "title": "Intro"
+      }
+    ]
+  },
+  "status": "gate_failed",
+  "notes": [
+    "Gate 5 (Video): Video file too small (0.0 MB)"
+  ],
+  "ts": "2026-03-29T06:09:11.535280+00:00"
+}

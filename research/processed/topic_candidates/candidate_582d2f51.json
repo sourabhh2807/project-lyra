@@ -1,0 +1,27 @@
+{
+  "topic_id": "582d2f51-9793-4945-8d2c-29fe23f79dbb",
+  "topic": "the dark history of bananas",
+  "niche": "dark_history",
+  "why_now": "Trending signal detected",
+  "audience_state": "entertainment-seeking",
+  "novelty_score": 0.5,
+  "saturation_score": 0.5,
+  "authority_fit": 0.6,
+  "research_confidence": 0.4,
+  "content_angles": [],
+  "audience_fears_triggered": [],
+  "audience_goals_served": [],
+  "open_questions": [],
+  "recommended_format": "long",
+  "predicted_half_life_days": 14,
+  "urgency_decay_days": 14,
+  "predicted_fitness": 0.4,
+  "trigger_type_recommended": "curiosity_gap",
+  "emotional_dimension_primary": "curiosity",
+  "evidence_sources": [
+    "google_trends"
+  ],
+  "source_signal": "the dark history of bananas",
+  "status": "queued",
+  "created_at": "2026-03-29T06:07:57.310267+00:00"
+}
