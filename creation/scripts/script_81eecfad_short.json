@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Arsenal vs Chelsea: A Shocking 1-0 Upset!",
+  "full_narration": "Imagine if I told you that Arsenal would defeat Chelsea with a solitary goal, and that this historic victory would be sealed by a player who had never scored a league goal before? It sounds far-fetched, but this is exactly what happened in 2004. The Gunners, under Ars\u00e8ne Wenger, would go on to win the match 1-0. Ashley Cole's own goal proved to be the decisive blow, leaving Chelsea stunned and Arsenal ecstatic. But what's even more astonishing is that this win marked a turning point in the Gunners' season, propelling them to a remarkable 7-game winning streak. Let's dive into the details of this shocking upset.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Imagine if I told you that Arsenal would defeat Chelsea with a solitary goal",
+      "visual_description": "A split-screen image of Arsenal and Chelsea logos, with a shocked expression on a football fan's face",
+      "text_overlay": "Arsenal vs Chelsea: A Shocking Upset!",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 12,
+      "narration": "The Gunners, under Ars\u00e8ne Wenger, would go on to win the match 1-0.",
+      "visual_description": "A montage of Arsenal players celebrating their win, with a focus on Ars\u00e8ne Wenger's triumphant expression",
+      "text_overlay": "Ars\u00e8ne Wenger's Gunners",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 13,
+      "narration": "Ashley Cole's own goal proved to be the decisive blow, leaving Chelsea stunned and Arsenal ecstatic.",
+      "visual_description": "A slow-motion replay of Ashley Cole's own goal, with a shocked expression on a Chelsea player's face",
+      "text_overlay": "Ashley Cole's Own Goal",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "But what's even more astonishing is that this win marked a turning point in the Gunners' season, propelling them to a remarkable 7-game winning streak.",
+      "visual_description": "A graph or chart showing Arsenal's winning streak, with a dramatic increase in their win rate",
+      "text_overlay": "7-Game Winning Streak",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}

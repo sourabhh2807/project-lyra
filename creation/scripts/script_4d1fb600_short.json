@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Deception Island's Sinister Past",
+  "full_narration": "Did you know, Deception Island, a haven for whales, was also a site of unimaginable human depravity? In 1675, the Dutch East India Company's ship, the Gulden Zeepaert, was wrecked off its coast, killing 11 sailors. But that's not all, during WWII, the Allies used Deception Island as a secret military base, conducting experiments on prisoners of war. These experiments, though horrific, remain largely unspoken about to this day.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Deception Island, a haven for whales, was also a site of unimaginable human depravity",
+      "visual_description": "Aerial shot of Deception Island with a haunting fog rolling in",
+      "text_overlay": "Deception Island",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 8,
+      "narration": "In 1675, the Dutch East India Company's ship, the Gulden Zeepaert, was wrecked off its coast, killing 11 sailors",
+      "visual_description": "Historical image of the wrecked ship with sailors in the water",
+      "text_overlay": "Gulden Zeepaert, 1675",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "During WWII, the Allies used Deception Island as a secret military base, conducting experiments on prisoners of war",
+      "visual_description": "Black and white footage of prisoners in a lab, with Allied scientists in the background",
+      "text_overlay": "Deception Island WWII Experiments",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 12,
+      "narration": "These experiments, though horrific, remain largely unspoken about to this day",
+      "visual_description": "Aerial shot of Deception Island, with a red 'X' marked through it",
+      "text_overlay": "Unspoken",
+      "intensity": "high",
+      "pacing": "slow"
+    }
+  ]
+}
