@@ -177,7 +177,7 @@ No ALL CAPS entire title. Max 70 characters per title candidate."""
     def _call_gemini(self, prompt, max_tokens):
         if not self.gemini: raise ValueError("No GEMINI_API_KEY")
         url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-               f"gemini-1.5-flash:generateContent?key={self.gemini}")
+               f"gemini-2.5-flash:generateContent?key={self.gemini}")
         body = {"contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.7,
                                      "responseMimeType": "application/json"}}
@@ -190,7 +190,7 @@ No ALL CAPS entire title. Max 70 characters per title candidate."""
         if not self.groq: raise ValueError("No GROQ_API_KEY")
         url  = "https://api.groq.com/openai/v1/chat/completions"
         hdrs = {"Authorization": f"Bearer {self.groq}", "Content-Type": "application/json"}
-        body = {"model": "llama3-8b-8192",
+        body = {"model": "llama-3.3-70b-versatile",
                 "messages": [{"role": "user", "content": prompt}],
                 "max_tokens": max_tokens, "temperature": 0.7}
         r = requests.post(url, json=body, headers=hdrs, timeout=30)
