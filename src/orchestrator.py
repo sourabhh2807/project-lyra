@@ -132,7 +132,11 @@ def run_generate(slot=None):
 
             # 4. Generate voice audio
             long_audio  = voice_gen.synthesize(scripts["long_script"], s, "long")
-            short_audio = voice_gen.synthesize(scripts["shorts_script"], s, "short")
+            short_audio = None
+            try:
+                short_audio = voice_gen.synthesize(scripts["shorts_script"], s, "short")
+            except Exception as e:
+                log.warning(f"Slot {s}: Shorts voice failed (non-blocking): {e}")
 
             if not long_audio:
                 log.error(f"Slot {s}: Voice generation failed — no audio produced")
@@ -141,13 +145,25 @@ def run_generate(slot=None):
 
             # 5. Generate visuals
             long_frames  = asset_gen.generate_frames(scripts["long_scenes"], s, "long")
-            short_frames = asset_gen.generate_frames(scripts["short_scenes"], s, "short")
+            short_frames = []
+            try:
+                if short_audio and scripts.get("short_scenes"):
+                    short_frames = asset_gen.generate_frames(scripts["short_scenes"], s, "short")
+            except Exception as e:
+                log.warning(f"Slot {s}: Short frames failed (non-blocking): {e}")
 
             # 6. Assemble videos
             long_video  = assembler.assemble(long_frames, long_audio, scripts["long_scenes"],
                                              genome, s, "long")
-            short_video = assembler.assemble(short_frames, short_audio, scripts["short_scenes"],
-                                             genome, s, "short")
+
+            # Shorts are OPTIONAL — never block the pipeline
+            short_video = None
+            try:
+                if short_audio and short_frames:
+                    short_video = assembler.assemble(short_frames, short_audio, scripts["short_scenes"],
+                                                     genome, s, "short")
+            except Exception as e:
+                log.warning(f"Slot {s}: Short assembly failed (non-blocking): {e}")
 
             if not long_video:
                 log.error(f"Slot {s}: Video assembly failed — no video produced")
