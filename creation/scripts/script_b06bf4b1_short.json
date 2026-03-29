@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Space Travel's Dark Secret",
+  "full_narration": "Imagine being able to travel across the universe in a matter of minutes, just like it's shown in sci-fi movies. But what if I told you that this kind of technology already exists, and it's been here for thousands of years? Ancient civilizations like the Egyptians, Greeks, and Romans had a profound understanding of astronomy and used it to navigate their way across the globe. They were able to predict solar and lunar eclipses, track the movements of planets, and even create calendars that were accurate to this day. But what's the real cost of this knowledge, and are we willing to pay the price to explore the unknown?",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Ancient civilizations had a deep understanding of astronomy",
+      "visual_description": "Close-up of an ancient Egyptian papyrus",
+      "text_overlay": "Astronomy in Ancient Egypt",
+      "intensity": "medium",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 15,
+      "narration": "They predicted solar and lunar eclipses and track planetary movements",
+      "visual_description": "Animation of ancient astronomers tracking celestial bodies",
+      "text_overlay": "Ancient Astronomy in Action",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "But what's the real cost of this knowledge?",
+      "visual_description": "A mysterious, ancient-looking artifact",
+      "text_overlay": "The Dark Side of Ancient Astronomy",
+      "intensity": "high",
+      "pacing": "slow"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "And are we willing to pay the price to explore the unknown?",
+      "visual_description": "A spaceship hurtling through space",
+      "text_overlay": "Space Travel's Dark Secret",
+      "intensity": "high",
+      "pacing": "fast"
+    }
+  ]
+}

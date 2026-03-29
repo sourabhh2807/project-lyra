@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Electric Vehicles: The Future of Transportation?",
+  "full_narration": "Imagine a world where cars run on nothing but air. Sounds like science fiction, but it's not. Electric vehicles are here, and they're transforming the way we think about transportation. Did you know that EVs produce zero tailpipe emissions, making them a cleaner alternative to gas-guzzling cars? But what about the cost? Electric vehicles are actually cheaper to run in the long term, with lower maintenance costs and reduced fuel expenses. But what's holding us back from making the switch? Let's take a closer look at the future of transportation.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Electric vehicles are the future of transportation",
+      "visual_description": "A sleek electric car driving down a highway",
+      "text_overlay": "Electric Vehicles: The Future",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 15,
+      "narration": "Zero tailpipe emissions, making them a cleaner alternative to gas-guzzling cars",
+      "visual_description": "Carbon dioxide emissions compared to EV emissions",
+      "text_overlay": "Zero Emissions",
+      "intensity": "high",
+      "pacing": "medium"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "Lower maintenance costs and reduced fuel expenses",
+      "visual_description": "An electric car charging at a charging station",
+      "text_overlay": "Cheaper to Run",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 10,
+      "narration": "But what's holding us back from making the switch?",
+      "visual_description": "A person looking confused about electric vehicles",
+      "text_overlay": "The Future of Transportation",
+      "intensity": "medium",
+      "pacing": "slow"
+    }
+  ]
+}
