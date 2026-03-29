@@ -1,32 +1,28 @@
-# Core
-requests==2.31.0
-python-dotenv==1.0.0
+# Project Lyra — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Core HTTP
+requests>=2.31.0
 
 # Google APIs
-google-generativeai==0.7.2
-google-auth==2.29.0
-google-auth-oauthlib==1.2.0
-google-auth-httplib2==0.2.0
-google-api-python-client==2.126.0
+google-generativeai>=0.7.2
+google-auth>=2.29.0
+google-auth-oauthlib>=1.2.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.126.0
 
 # Trends Research
-pytrends==4.9.2
+pytrends>=4.9.2
 
 # TTS Voice Generation
-edge-tts==6.1.9
+edge-tts>=6.1.9
 
-# Image & Video Processing
-Pillow==10.3.0
-requests==2.31.0
+# Image Processing
+Pillow>=10.3.0
 
-# Audio Analysis (Quality Gate)
-librosa==0.10.1
-soundfile==0.12.1
-numpy==1.26.4
+# Numeric (quality gate, analytics)
+numpy>=1.26.4
 
-# Data
-sqlite3  # stdlib
-
-# Utilities
-asyncio  # stdlib
-uuid     # stdlib
+# Note: sqlite3, asyncio, uuid are Python stdlib — no pip install needed
+# Note: ffmpeg must be installed via apt (pre-installed on GitHub Actions ubuntu-latest)
+# Note: librosa/soundfile removed — quality gate uses ffprobe + file size checks instead
