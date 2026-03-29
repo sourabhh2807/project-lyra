@@ -75,25 +75,29 @@ class AssetGenerator:
         return f"{visual_desc}, {style}, ultra detailed, professional photography"
 
     def _download_image(self, prompt, out_path, width=1920, height=1080):
-        """Download from Pollinations.ai, fallback to HuggingFace."""
-        # Try Pollinations first
-        try:
-            encoded = quote(prompt[:500], safe='')
-            url = f"https://image.pollinations.ai/prompt/{encoded}?width={width}&height={height}&nologo=true&enhance=true"
-            r = requests.get(url, timeout=45, stream=True)
-            if r.status_code == 200 and len(r.content) > 5000:
-                with open(out_path, "wb") as f:
-                    f.write(r.content)
-                return True
-        except Exception as e:
-            log.warning(f"Pollinations failed: {e}")
-
-        # Fallback to HuggingFace SDXL
+        """Download from HuggingFace SDXL (primary), then Pollinations (secondary)."""
+        # Try HuggingFace first (more reliable now that Pollinations requires auth)
         if self.hf_key:
             try:
-                return self._download_from_hf(prompt, out_path)
+                if self._download_from_hf(prompt, out_path):
+                    return True
             except Exception as e:
-                log.warning(f"HuggingFace fallback failed: {e}")
+                log.warning(f"HuggingFace failed: {e}")
+
+        # Try Pollinations (may require API key now)
+        for base_url in ["https://gen.pollinations.ai/image", "https://image.pollinations.ai/prompt"]:
+            try:
+                encoded = quote(prompt[:400], safe='')
+                url = f"{base_url}/{encoded}?width={width}&height={height}&nologo=true"
+                r = requests.get(url, timeout=45, allow_redirects=True)
+                # Check if response is actually an image (not JSON error)
+                content_type = r.headers.get("content-type", "")
+                if r.status_code == 200 and len(r.content) > 5000 and "image" in content_type:
+                    with open(out_path, "wb") as f:
+                        f.write(r.content)
+                    return True
+            except Exception as e:
+                log.warning(f"Pollinations ({base_url}) failed: {e}")
 
         return False
 
@@ -109,20 +113,55 @@ class AssetGenerator:
         return False
 
     def _create_placeholder(self, out_path, text, width, height):
-        """Create a simple colored placeholder image using Pillow."""
+        """Create a styled placeholder image with gradient background."""
         try:
             from PIL import Image, ImageDraw, ImageFont
-            img = Image.new("RGB", (width, height), color=(20, 20, 30))
+            import random
+
+            # Dark gradient background based on slot (inferred from path)
+            colors = [
+                [(30, 5, 5), (80, 15, 15)],      # Dark red (history)
+                [(5, 10, 35), (20, 30, 80)],      # Dark blue (psychology)
+                [(5, 25, 30), (10, 50, 60)],      # Dark cyan (tech)
+            ]
+            palette = random.choice(colors)
+            img = Image.new("RGB", (width, height), palette[0])
             draw = ImageDraw.Draw(img)
-            # Draw text in center
-            short_text = text[:80] if text else "Visual Scene"
-            draw.text((width // 2, height // 2), short_text,
-                     fill=(150, 150, 170), anchor="mm")
+
+            # Simple vertical gradient
+            for y in range(height):
+                ratio = y / height
+                r = int(palette[0][0] + (palette[1][0] - palette[0][0]) * ratio)
+                g = int(palette[0][1] + (palette[1][1] - palette[0][1]) * ratio)
+                b = int(palette[0][2] + (palette[1][2] - palette[0][2]) * ratio)
+                draw.line([(0, y), (width, y)], fill=(r, g, b))
+
+            # Add text in center
+            short_text = text[:60] if text else "Visual Scene"
+            # Try to load a font, fall back to default
+            try:
+                font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                                          max(24, int(height * 0.04)))
+            except Exception:
+                font = ImageFont.load_default()
+
+            # Text with shadow
+            tx, ty = width // 2, height // 2
+            draw.text((tx + 2, ty + 2), short_text, fill=(0, 0, 0), anchor="mm", font=font)
+            draw.text((tx, ty), short_text, fill=(180, 180, 190), anchor="mm", font=font)
+
             img.save(out_path, "JPEG", quality=85)
             return out_path
-        except Exception:
-            # Ultra-fallback: write a tiny valid JPEG
-            return out_path
+        except Exception as e:
+            log.warning(f"Placeholder creation failed: {e}")
+            # Ultra-fallback: create a minimal valid JPEG
+            try:
+                from PIL import Image
+                img = Image.new("RGB", (width, height), (20, 20, 30))
+                img.save(out_path, "JPEG", quality=70)
+                return out_path
+            except Exception:
+                return out_path
 
     def _load_cache(self):
         if os.path.exists(self.cache_path):
