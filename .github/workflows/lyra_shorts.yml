@@ -1,0 +1,65 @@
+name: Lyra Shorts Machine
+
+on:
+  schedule:
+    # 2x daily — morning and evening (UTC)
+    # These are base times; pipeline adds random 0-90 min delay
+    - cron: '30 8 * * *'    # ~8:30 AM UTC (2 PM IST)
+    - cron: '0 17 * * *'    # ~5:00 PM UTC (10:30 PM IST)
+  workflow_dispatch:         # Manual trigger anytime
+
+jobs:
+  post_short:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LYRA_PAT }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -q requests
+
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Random delay (0-90 min) for natural posting
+        if: github.event_name == 'schedule'
+        run: |
+          DELAY=$((RANDOM % 5400))
+          echo "Waiting ${DELAY}s (~$((DELAY/60))min) for natural timing..."
+          sleep $DELAY
+
+      - name: Create directories
+        run: mkdir -p data tmp data/music
+
+      - name: Initialize upload history if missing
+        run: |
+          if [ ! -f data/upload_history.json ]; then
+            echo '[]' > data/upload_history.json
+          fi
+
+      - name: Run Lyra Shorts Pipeline
+        env:
+          PEXELS_API_KEY:   ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY:  ${{ secrets.PIXABAY_API_KEY }}
+          YT_OAUTH_TOKEN_0: ${{ secrets.YT_OAUTH_TOKEN_0 }}
+          YT_REFRESH_TOKEN:  ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_CLIENT_ID:     ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET:  ${{ secrets.YT_CLIENT_SECRET }}
+        run: python src/shorts_pipeline.py
+
+      - name: Commit upload history
+        run: |
+          git config user.name  "Lyra-Bot"
+          git config user.email "lyra@noreply.github.com"
+          git add data/upload_history.json data/music/ || true
+          git diff --cached --quiet || git commit -m "short: posted $(date -u +%Y-%m-%d_%H:%M)"
+          git pull --rebase origin main || true
+          git push || true
