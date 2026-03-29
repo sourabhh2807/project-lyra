@@ -123,18 +123,24 @@ class VideoAssembler:
         with tempfile.NamedTemporaryFile(mode='w', suffix='.txt',
                                          delete=False, dir=self.render_dir) as f:
             concat_file = f.name
+            valid_entries = 0
             for i, (frame, dur) in enumerate(zip(frame_paths, scene_durations)):
                 if not os.path.exists(frame):
-                    # Write a placeholder frame path
-                    f.write(f"# missing frame {i}\n")
+                    log.warning(f"  Missing frame {i}, skipping")
                     continue
                 f.write(f"file '{os.path.abspath(frame)}'\n")
                 f.write(f"duration {dur:.3f}\n")
+                valid_entries += 1
             # Repeat last frame to avoid truncation
-            if frame_paths:
+            if valid_entries > 0:
                 last_frame = next((fp for fp in reversed(frame_paths)
                                    if os.path.exists(fp)), frame_paths[-1])
                 f.write(f"file '{os.path.abspath(last_frame)}'\n")
+
+        if valid_entries == 0:
+            log.error("No valid frames for concat — cannot assemble")
+            os.unlink(concat_file)
+            return False
 
         # Generate text overlay filter if scenes have overlays
         overlay_filter = self._build_text_overlay_filter(scenes, scene_durations, width, height)
@@ -230,10 +236,12 @@ class VideoAssembler:
         return result.returncode == 0
 
     def _kenburns_filter(self, width, height):
-        """Generate a gentle Ken Burns zoom effect for visual dynamism."""
-        # Alternating slow zoom in / zoom out
-        return (f"zoompan=z='if(lte(mod(on,300),150),1.0+on/300*0.08,1.08-mod(on,300)/300*0.08)':"
-                f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={width}x{height}:fps=30")
+        """Generate a gentle Ken Burns zoom effect for visual dynamism.
+        Uses slow zoom in/out cycling every ~10 seconds of output."""
+        # Gentle 4% zoom oscillation, no pan drift
+        return (f"zoompan=z='1.0+0.04*sin(on/150*PI)':"
+                f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+                f"d=1:s={width}x{height}:fps=30")
 
     def _build_text_overlay_filter(self, scenes, durations, width, height):
         """Build drawtext filter for scene text overlays."""
