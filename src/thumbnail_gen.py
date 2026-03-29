@@ -139,7 +139,8 @@ Return ONLY a JSON object: {{"score": 0.0, "reason": "brief explanation"}}"""
         url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
                f"gemini-1.5-flash:generateContent?key={self.gemini}")
         body = {"contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"maxOutputTokens": 200, "temperature": 0.3}}
+                "generationConfig": {"maxOutputTokens": 200, "temperature": 0.3,
+                                     "responseMimeType": "application/json"}}
         r = requests.post(url, json=body, timeout=20)
         r.raise_for_status()
         text = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
