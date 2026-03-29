@@ -1,6 +1,6 @@
 """
 script_gen.py — Generates long video scripts (10-15 min) and shorts scripts (45-59 sec)
-using Gemini 1.5 Flash. Returns structured scene data for downstream assembly.
+using Gemini 2.5 Flash. Returns structured scene data for downstream assembly.
 """
 import json, os, re, requests, logging, uuid
 from datetime import datetime, timezone
@@ -297,7 +297,7 @@ CRITICAL: Return ONLY valid JSON. No markdown fences. No text before or after.
         if not self.gemini_key:
             raise ValueError("GEMINI_API_KEY not set")
         url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-               f"gemini-1.5-flash:generateContent?key={self.gemini_key}")
+               f"gemini-2.5-flash:generateContent?key={self.gemini_key}")
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
@@ -329,7 +329,7 @@ CRITICAL: Return ONLY valid JSON. No markdown fences. No text before or after.
         headers = {"Authorization": f"Bearer {self.groq_key}",
                    "Content-Type": "application/json"}
         body = {
-            "model": "llama-3.1-8b-instant",
+            "model": "llama-3.3-70b-versatile",
             "messages": [
                 {"role": "system", "content": "You are a JSON-only scriptwriter. Return only valid JSON with no markdown fences or extra text."},
                 {"role": "user", "content": prompt}
