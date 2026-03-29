@@ -23,7 +23,7 @@ class ScriptGenerator:
 
         try:
             log.info(f"Generating LONG script for: {topic['topic']}")
-            long_raw  = self._call_llm(long_prompt, max_tokens=4000)
+            long_raw  = self._call_llm(long_prompt, max_tokens=6000)
             if not long_raw:
                 log.error("LLM returned empty response for long script")
                 return None
@@ -32,8 +32,12 @@ class ScriptGenerator:
                 log.error(f"Failed to parse long script JSON. Raw (first 500 chars): {long_raw[:500]}")
                 return None
 
+            # Wait before second call to avoid rate limits
+            import time
+            time.sleep(5)
+
             log.info(f"Generating SHORTS script for: {topic['topic']}")
-            short_raw  = self._call_llm(short_prompt, max_tokens=1200)
+            short_raw  = self._call_llm(short_prompt, max_tokens=2000)
             if not short_raw:
                 log.error("LLM returned empty response for shorts script")
                 # Continue with long only — shorts are optional
@@ -122,7 +126,61 @@ class ScriptGenerator:
                             pass
 
         log.error(f"All JSON parse strategies failed for {label}")
+
+        # Strategy 6: Try to repair truncated JSON (Groq/Gemini often cut off mid-string)
+        repaired = self._repair_truncated_json(text)
+        if repaired:
+            try:
+                return json.loads(repaired)
+            except json.JSONDecodeError:
+                pass
+
+        log.error(f"All JSON parse strategies (including repair) failed for {label}")
         return None
+
+    def _repair_truncated_json(self, text):
+        """Attempt to close truncated JSON by adding missing quotes, brackets."""
+        # Find the JSON start
+        start = text.find('{')
+        if start == -1:
+            return None
+
+        text = text[start:]
+
+        # If it has full_narration, try to extract at least that
+        # Close any open string
+        in_string = False
+        escaped = False
+        last_good = 0
+        for i, c in enumerate(text):
+            if escaped:
+                escaped = False
+                continue
+            if c == '\\':
+                escaped = True
+                continue
+            if c == '"':
+                in_string = not in_string
+            if not in_string:
+                last_good = i
+
+        # Truncate at last position outside a string, close everything
+        truncated = text[:last_good + 1]
+        # If we're inside a string, close it
+        if in_string:
+            truncated += '"'
+        # Count open brackets
+        open_brackets = truncated.count('[') - truncated.count(']')
+        open_braces = truncated.count('{') - truncated.count('}')
+        truncated += ']' * max(0, open_brackets)
+        truncated += '}' * max(0, open_braces)
+
+        try:
+            result = json.loads(truncated)
+            log.info(f"  JSON repaired successfully via truncation recovery")
+            return truncated
+        except json.JSONDecodeError:
+            return None
 
     def _strip_markdown_fences(self, text):
         """Remove ```json ... ``` or ``` ... ``` wrappers."""
@@ -306,7 +364,7 @@ CRITICAL: Return ONLY valid JSON. No markdown fences. No text before or after.
                 "responseMimeType": "application/json"
             }
         }
-        r = requests.post(url, json=body, timeout=90)
+        r = requests.post(url, json=body, timeout=120)
         if r.status_code == 429:
             log.warning("Gemini rate limited (429)")
             raise Exception("Rate limited")
@@ -328,17 +386,19 @@ CRITICAL: Return ONLY valid JSON. No markdown fences. No text before or after.
         url = "https://api.groq.com/openai/v1/chat/completions"
         headers = {"Authorization": f"Bearer {self.groq_key}",
                    "Content-Type": "application/json"}
+        # Always use at least 8000 tokens for Groq to avoid truncation
+        groq_tokens = max(max_tokens, 8000)
         body = {
             "model": "llama-3.3-70b-versatile",
             "messages": [
                 {"role": "system", "content": "You are a JSON-only scriptwriter. Return only valid JSON with no markdown fences or extra text."},
                 {"role": "user", "content": prompt}
             ],
-            "max_tokens": max_tokens,
+            "max_tokens": groq_tokens,
             "temperature": 0.75,
             "response_format": {"type": "json_object"}
         }
-        r = requests.post(url, json=body, headers=headers, timeout=90)
+        r = requests.post(url, json=body, headers=headers, timeout=120)
         r.raise_for_status()
         text = r.json()["choices"][0]["message"]["content"].strip()
         return text
