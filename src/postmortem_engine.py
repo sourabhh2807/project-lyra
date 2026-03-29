@@ -162,7 +162,7 @@ Return ONLY valid JSON (no markdown):
         if not self.gemini_key:
             raise ValueError("No Gemini key")
         url  = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-                f"gemini-1.5-flash:generateContent?key={self.gemini_key}")
+                f"gemini-2.5-flash:generateContent?key={self.gemini_key}")
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.4,
