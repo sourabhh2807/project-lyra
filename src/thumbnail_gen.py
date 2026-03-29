@@ -137,7 +137,7 @@ Return ONLY a JSON object: {{"score": 0.0, "reason": "brief explanation"}}"""
 
     def _call_gemini(self, prompt):
         url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-               f"gemini-1.5-flash:generateContent?key={self.gemini}")
+               f"gemini-2.5-flash:generateContent?key={self.gemini}")
         body = {"contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {"maxOutputTokens": 200, "temperature": 0.3,
                                      "responseMimeType": "application/json"}}
