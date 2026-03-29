@@ -33,10 +33,19 @@ class ResearchAgent:
 
         # C. Filter and score each signal → topic candidates
         candidates = []
-        for signal in raw_signals[:20]:  # Cap at 20 to save API quota
+        for signal in raw_signals[:8]:  # Cap at 8 to avoid rate limits (was 20)
+            # English-only filter — skip Hindi/non-Latin topics
+            topic_text = signal.get("query", "")
+            if self._is_non_english(topic_text):
+                log.info(f"  Skipping non-English topic: {topic_text[:50]}")
+                continue
+
             cand = self._build_topic_candidate(signal, niche, niche_cfg, audience)
             if cand and cand["novelty_score"] > 0.3 and cand["saturation_score"] < 0.75:
                 candidates.append(cand)
+
+            # Rate limit: wait between Gemini calls to avoid 429
+            time.sleep(3)
 
         # D. Save candidates
         for cand in candidates[:10]:  # Top 10
@@ -217,6 +226,21 @@ Return ONLY valid JSON, no markdown, no explanation:
         with open(cfg_path) as f:
             cfg = json.load(f)
         return cfg["niches"].get(niche)
+
+    def _is_non_english(self, text):
+        """Return True if text appears to be non-English (Hindi, etc)."""
+        if not text:
+            return True
+        # Check for Devanagari, Arabic, CJK characters
+        non_latin_count = sum(1 for c in text if ord(c) > 0x024F)
+        if non_latin_count > len(text) * 0.15:
+            return True
+        # Common Hindi words
+        hindi_markers = ["कि", "में", "है", "के", "का", "और", "hindi", "हिंदी"]
+        text_lower = text.lower()
+        if any(m in text_lower for m in hindi_markers):
+            return True
+        return False
 
     # ── Gemini API call ───────────────────────────────────────────────────────
 
