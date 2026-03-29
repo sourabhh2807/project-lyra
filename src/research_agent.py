@@ -223,7 +223,7 @@ Return ONLY valid JSON, no markdown, no explanation:
     def _call_gemini(self, prompt, max_tokens=1000):
         if not self.gemini_key:
             raise ValueError("GEMINI_API_KEY not set")
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={self.gemini_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={self.gemini_key}"
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
