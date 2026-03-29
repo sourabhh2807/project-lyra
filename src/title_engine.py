@@ -192,8 +192,9 @@ No ALL CAPS entire title. Max 70 characters per title candidate."""
         hdrs = {"Authorization": f"Bearer {self.groq}", "Content-Type": "application/json"}
         body = {"model": "llama-3.3-70b-versatile",
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": max_tokens, "temperature": 0.7}
-        r = requests.post(url, json=body, headers=hdrs, timeout=30)
+                "max_tokens": max(max_tokens, 2000), "temperature": 0.7,
+                "response_format": {"type": "json_object"}}
+        r = requests.post(url, json=body, headers=hdrs, timeout=60)
         r.raise_for_status()
         text = r.json()["choices"][0]["message"]["content"].strip()
         return self._clean(text)
