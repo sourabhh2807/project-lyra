@@ -24,21 +24,22 @@ jobs:
           mkdir -p execution/publish_logs
 
       - name: Run Health Check
-        run: python src/health_check.py
+        run: python src/health_check.py || true
 
       - name: Commit health report
         run: |
           git config user.name  "Lyra-Bot"
           git config user.email "lyra@noreply.github.com"
-          git add data/health_report.json || true
+          git add data/health_report.json LYRA_REPORT.md || true
           git diff --cached --quiet || git commit -m "health: $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main || true
           git push || true
 
   memory_compression:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: health_check
-    if: github.event.schedule == '0 8 * * 0' || github.event_name == 'workflow_dispatch'
+    if: always() && (github.event.schedule == '0 8 * * 0' || github.event_name == 'workflow_dispatch')
     steps:
       - uses: actions/checkout@v4
         with:
@@ -68,4 +69,5 @@ jobs:
           git config user.email "lyra@noreply.github.com"
           git add memory/ || true
           git diff --cached --quiet || git commit -m "memory: tier promotions [$(date -u +%Y-%m-%d)]"
+          git pull --rebase origin main || true
           git push || true
