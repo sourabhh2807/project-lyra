@@ -1,0 +1,42 @@
+{
+  "shorts_title": "Villainess Reborn",
+  "full_narration": "Warning, you're about to meet the most ruthless villainess in history, Isaac, who was reincarnated with a dark past. You'll discover how Isaac's transformations from innocent to evil unfolded, fueled by a thirst for power and revenge. Her story is marked by brutal murders, cunning manipulations, and an unrelenting quest for dominance. As you delve into Isaac's twisted world, you'll realize that her darkness was not born, but made. And the most chilling part? Her reincarnation was just the beginning.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_estimate_sec": 5,
+      "narration": "Warning, you're about to meet the most ruthless villainess in history, Isaac, who was reincarnated with a dark past.",
+      "visual_description": "A dark, ominous background with a faint image of Isaac in the shadows",
+      "text_overlay": "The Reincarnated Villainess",
+      "intensity": "high",
+      "pacing": "fast"
+    },
+    {
+      "scene_id": 2,
+      "duration_estimate_sec": 15,
+      "narration": "You'll discover how Isaac's transformations from innocent to evil unfolded, fueled by a thirst for power and revenge.",
+      "visual_description": "A rapid sequence of images showing Isaac's transformation, with red accents symbolizing her growing darkness",
+      "text_overlay": "From Innocence to Evil",
+      "intensity": "very high",
+      "pacing": "very fast"
+    },
+    {
+      "scene_id": 3,
+      "duration_estimate_sec": 10,
+      "narration": "Her story is marked by brutal murders, cunning manipulations, and an unrelenting quest for dominance.",
+      "visual_description": "A haunting montage of Isaac's brutal acts, with a dark filter and menacing music",
+      "text_overlay": "A Legacy of Blood and Deceit",
+      "intensity": "extreme",
+      "pacing": "rapid"
+    },
+    {
+      "scene_id": 4,
+      "duration_estimate_sec": 8,
+      "narration": "And the most chilling part? Her reincarnation was just the beginning.",
+      "visual_description": "A close-up of Isaac's face, with an unsettling smile and glowing red eyes",
+      "text_overlay": "The Darkness Continues...",
+      "intensity": "high",
+      "pacing": "slow"
+    }
+  ]
+}
